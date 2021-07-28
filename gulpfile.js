@@ -1,6 +1,27 @@
-var gulp = require('gulp');
-var nunjucksRender = require('gulp-nunjucks-render');
-var webserver = require('gulp-webserver');
+const gulp = require('gulp');
+const nunjucksRender = require('gulp-nunjucks-render');
+const webserver = require('gulp-webserver');
+const through2 = require('through2');
+
+function checkForSpellingMistakes(text) {
+    if (text.includes("data-csm-section")) {
+        return false;
+    }
+    return true;
+}
+
+gulp.task('spellcheck', function () {
+    return gulp.src('src/**/*.+(html|nunjucks|njk)')
+        .pipe(through2.obj(function (file, _, cb) {
+            if (file.isBuffer()) {
+                const passed = checkForSpellingMistakes(file.contents.toString());
+                if (!passed) {
+                    console.log(`${file.path}: data-csm-section`);
+                }
+            }
+            cb(null, file);
+        }))
+});
 
 gulp.task('nunjucks', function () {
     // Gets .html and .nunjucks files in pages
@@ -35,3 +56,7 @@ gulp.task('docs', function () {
             open: true
         }));
 });
+
+// gulp.task('watch', function () {
+//     gulp.watch('src/*.*', gulp.series('nunjucks', 'copy'));
+// });
