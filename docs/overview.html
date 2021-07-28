@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tagging Overview - webmotion.cloud tagging documentation</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link
+        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/lightbox/dist/ekko-lightbox.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body class="body-blue">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">Tagging Docs</span>
+                        </a>
+                    </h1>
+                </div>
+                <!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Tagging Overview</li>
+                </ol>
+                <div class="top-search-box">
+                    <form class="form-inline search-form justify-content-center" action="" method="get">
+
+                        <input type="text" placeholder="Search..." name="search" class="form-control search-input">
+
+                        <button type="submit" class="btn search-btn" value="Search"><i
+                                class="fas fa-search"></i></button>
+
+                    </form>
+                </div>
+            </div>
+            <!--//container-->
+        </header>
+        <!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><span aria-hidden="true" class="icon icon_datareport_alt"></span> Tagging
+                        Overview</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Last updated: Feb 22th, 2021</div>
+                </div>
+                <!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            <section id="page-section" class="doc-section">
+                                <h2 class="section-title">Page Tagging</h2>
+                                <div class="section-block">
+                                    <p>Pages must have a page name and a page type, in order to identify the Page in the
+                                        website builder.</p>
+                                    <h6>Pages can have one of the following page types:</h6>
+                                    <ul class="list">
+                                        <li>HOMEPAGE</li>
+                                        <li>SERVICE</li>
+                                        <li>CONTACT</li>
+                                        <li>BOOKING</li>
+                                        <li>SALE</li>
+                                        <li>NEWS</li>
+                                        <li>CAREER</li>
+                                        <li>IMPRINT</li>
+                                        <li>PRIVACY_POLICY</li>
+                                        <li>TERMS_CONDITIONS</li>
+                                        <li>ABOUT_US</li>
+                                        <li>THANKS</li>
+                                        <li>OTHERS</li>
+                                    </ul>
+                                    The page type should always be deinfed on the head tag together with a page name.
+                                    <div class="code-block">
+                                        <h6>Homepage example:</h6>
+                                        <pre><code class="language-markup">
+&lt;head data-cms-page=&quot;Homepage&quot; data-cms-page-type=&quot;HOMEPAGE&quot;&gt; 
+    ...
+&lt;/head&gt;</code></pre>
+                                    </div>
+
+                                </div>
+                            </section>
+                            <section id="section-section" class="doc-section">
+                                <h2 class="section-title">Section Tagging</h2>
+                                <div id="section-basic" class="section-block">
+                                    <h3 class="block-title">Basic</h3>
+                                    <p>
+                                        Sections must be tagged with a section name. This section name must be unique,
+                                        unless sections have exactly the same schema.
+                                    </p>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-section=&quot;&lt;Section Name&gt;&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                                <div id="section-fixed" class="section-block">
+                                    <h3 class="block-title">Fixed</h3>
+                                    <p>
+                                        Some Sections should always stay at the same position. This means, the user can
+                                        not move this section inside the page to another position. It is possible to set
+                                        the first three
+                                        sections as fixed, as well as the last three sections. In addition to that, a
+                                        section can be set to independent, if it does not matter where the section is
+                                        defined inside the html.
+                                    </p>
+                                    <ul>
+                                        <li>FIRST</li>
+                                        <li>SECOND</li>
+                                        <li>THIRD</li>
+                                        <li>THIRDLAST</li>
+                                        <li>SECONDLAST</li>
+                                        <li>LAST</li>
+                                        <li>INDEPENDENT</li>
+                                    </ul>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-fixed</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-section=&quot;&lt;Section Name&gt;&quot; data-cms-fixed=&quot;FIRST&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                                <div id="section-unique" class="section-block">
+                                    <h3 class="block-title">Unique</h3>
+                                    <p>
+                                        Some Sections should always be unique on a page. This includes espacially Header
+                                        and Footer, but can also include some other sections, which should not be
+                                        displayed twice.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-unique</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-section=&quot;&lt;Section Name&gt;&quot; data-cms-unique=&quot;true&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                                <div id="section-global" class="section-block">
+                                    <h3 class="block-title">Global</h3>
+                                    <p>
+                                        Some Sections should be the same on every page. This mainly includes the Header
+                                        and Footer, but could also be the case for other other sections like a map.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-global</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-section=&quot;&lt;Section Name&gt;&quot; data-cms-global=&quot;true&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                                <div id="section-internal" class="section-block">
+                                    <h3 class="block-title">Internal</h3>
+                                    <p>
+                                        Some Sections are just for internal use and contain no content. Therefore the
+                                        User should not see this section in the website builder.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <code>data-cms-internal</code>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-section=&quot;&lt;Section Name&gt;&quot; data-cms-internal=&quot;true&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                                <div id="section-database" class="section-block">
+                                    <h3 class="block-title">Database Module</h3>
+                                    <p>
+                                        Some Sections should read their data from the database. This is for example the
+                                        case for customer master-data (Company Name, Address, Logo), services and
+                                        memberships. For a full list of database modules read <a
+                                            href="database-modules.html">this.</a>
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-database-module</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-section=&quot;&lt;Section Name&gt;&quot; data-cms-database-module=&quot;&lt;module-name&gt;&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                    <h4>Database Category</h4>
+                                    <p>
+                                        It is also possible to further categorize the database module, which should be
+                                        loaded. Click <a href="database-modules.html">here</a>, to see available
+                                        modules.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-database-category</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-section=&quot;&lt;Section Name&gt;&quot; data-cms-database-module=&quot;&lt;module-name&gt;&quot; data-cms-database-category=&quot;&lt;category-name&gt;&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">How does the injection of the database content
+                                                work?</h4>
+                                            <p>
+                                                Database Content is injected by two different ways. Which one is used,
+                                                depends on the <code>data-cms-internal</code> Tag.
+                                                <h5>Internal Tag is set</h5>
+                                                <p>
+                                                    If the internal Tag is set, the database Content is injected once at
+                                                    the beginning, after creating the website. After that, it always
+                                                    injected if the database content changes. This is for example the
+                                                    case, if the customer changes his logo in the cloud or he adds a new
+                                                    membership.
+                                                    For database content, which exists multiple times (e.g. a customer
+                                                    has three memberships, which he wants on the website), the section
+                                                    will be copied as often, as database content exists. (E.g. the
+                                                    customer has three memberships and the membership is displayed in
+                                                    one section, this section will be copied three times and filled with
+                                                    the dedicated content.
+                                                </p>
+                                                <h5>Internal Tag is <strong>NOT</strong> set</h5>
+                                                <p>
+                                                    If the internal Tag is <strong>NOT</strong> set, the database
+                                                    content will be injected, if the user actively selects it. This is
+                                                    for example the case, if the user adds a new service to his service
+                                                    page. He then can select from all predefined service templates (e.g.
+                                                    Sauna, Fitness-Circle, ...). If he selects one, the predefined data
+                                                    will be directly injected into the section / component.
+                                                </p>
+                                            </p>
+                                        </div>
+                                        <!--//content-->
+                                    </div>
+                                </div>
+                            </section>
+                            <!--//doc-section-->
+                            <section id="component-list-section" class="doc-section">
+                                <h2 class="section-title">Component List Tagging</h2>
+                                <div id="component-list-basic" class="section-block">
+                                    <h3 class="block-title">Basic</h3>
+                                    <p>
+                                        Component Lists must be tagged with a component list name and a component
+                                        category, to identify, which components are allowed to be rendered into this
+                                        component list.
+                                    </p>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-component-list=&quot;&lt;Component List Name&gt;&quot; data-cms-component-category=&quot;&lt;Component Category&gt;&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                    <div class="callout-block callout-danger">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Use of Component Lists:</h4>
+                                            <p>
+                                                Component Lists can only appear <strong>once</strong> in their parent
+                                                scope. E.g. a
+                                                section can only have one component list.
+                                                If multiple component lists are required, they have to be wrapped into
+                                                another component list and then again defined as components.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <h4>Example:</h4>
+                                    <div class="w-100 bg-secondary p-5">
+                                        <div class="w-100 bg-light p-3 mb-3">
+                                            <h3>Section 1 having a Component List</h3>
+                                            <div>
+                                                <div class="p-3 mb-2 bg-secondary text-center">
+                                                    <h5>Component 1, which is just a wrapper for another component list.
+                                                    </h5>
+                                                    <div>
+                                                        <div class="p-3 mb-2 bg-light text-center">Component List 1 -
+                                                            Component 1</div>
+                                                        <div class="p-3 mb-2 bg-light text-center">Component List 1 -
+                                                            Component 2</div>
+                                                    </div>
+                                                </div>
+                                                <div class="p-3 mb-2 bg-secondary text-center">
+                                                    <h5>Component 2, which is just a wrapper for another component list.
+                                                    </h5>
+                                                    <div>
+                                                        <div class="p-3 mb-2 bg-light text-center">Component List 2 -
+                                                            Component 1</div>
+                                                        <div class="p-3 mb-2 bg-light text-center">Component List 2 -
+                                                            Component 2</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-section=&quot;Section 1&quot;&gt;
+    &lt;h3 data-cms-element=&quot;Headline&quot; data-cms-text=&quot;true&quot;&gt;Section 1 having a Component List&lt;/h3&gt;
+    &lt;div data-cms-component-list=&quot;Outer Component List&quot; data-cms-component-category=&quot;component-list-component&quot;&gt;
+        &lt;div data-cms-component=&quot;Component List Wrapper&quot; data-cms-component-category=&quot;component-list-component&quot;&gt;
+            &lt;h5&gt;Component 1, which is just a wrapper for another component list.&lt;/h5&gt;
+            &lt;div data-cms-component-list=&quot;Inner Component List&quot; data-cms-component-category=&quot;text-component&quot;&gt;
+                &lt;div data-cms-component=&quot;Text Component&quot; data-cms-component-category=&quot;text-component&quot;&gt;Component List 1 - Component 1&lt;/div&gt;
+                &lt;div data-cms-component=&quot;Text Component&quot; data-cms-component-category=&quot;text-component&quot;&gt;Component List 1 - Component 2&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-cms-component=&quot;Component List Wrapper&quot; data-cms-component-category=&quot;component-list-component&quot;&gt;
+            &lt;h5&gt;Component 2, which is just a wrapper for another component list.&lt;/h5&gt;
+            &lt;div data-cms-component-list=&quot;Inner Component List&quot; data-cms-component-category=&quot;text-component&quot;&gt;
+                &lt;div data-cms-component=&quot;Text Component&quot; data-cms-component-category=&quot;text-component&quot;&gt;Component List 2 - Component 1&lt;/div&gt;
+                &lt;div data-cms-component=&quot;Text Component&quot; data-cms-component-category=&quot;text-component&quot;&gt;Component List 2 - Component 2&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                                        </code></pre>
+                                    </div>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Component List and Component Naming:</h4>
+                                            <p>
+                                                As you may noticed, we named the inner component lists, components and
+                                                categories all the same. This should be done, because the inner
+                                                components have exactly the same schema.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="component-list-min" class="section-block">
+                                    <h3 class="block-title">Minimum number of components</h3>
+                                    <p>
+                                        A component list should often have at least one or two components inside. We can
+                                        define the minimum number of components, which must be inside the component
+                                        list.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-min-components</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-component-list=&quot;&lt;Component List Name&gt;&quot; data-cms-min-components=&quot;1&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                                <div id="component-list-max" class="section-block">
+                                    <h3 class="block-title">Maximum number of components</h3>
+                                    <p>
+                                        Sometimes we don't want the customer to add as many components to a component
+                                        list as he wants. Therefore we can specify a maximum amount of components, which
+                                        can be in this component list.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-max-components</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-component-list=&quot;&lt;Component List Name&gt;&quot; data-cms-max-components=&quot;4&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                                <div id="component-list-internal" class="section-block">
+                                    <h3 class="block-title">Internal</h3>
+                                    <p>
+                                        Some component lists are just for internal use and contain no content or the
+                                        content will be injected automatically. Therefore the User should not see this
+                                        component list in the website builder.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-internal</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-component-list=&quot;&lt;Component List Name&gt;&quot; data-cms-internal=&quot;true&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                                <div id="component-list-database" class="section-block">
+                                    <h3 class="block-title">Database Module</h3>
+                                    <p>
+                                        Some Component Lists should read their data from the database. This is for
+                                        example the
+                                        case for services and memberships. For a full list of database modules read <a
+                                            href="database-modules.html">this.</a>
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-database-module</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-component-list=&quot;&lt;Component List Name&gt;&quot; data-cms-database-module=&quot;&lt;module-name&gt;&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                    <h4>Database Category</h4>
+                                    <p>
+                                        It is also possible to further categorize the database module, which should be
+                                        loaded. Click <a href="database-modules.html">here</a>, to see available
+                                        modules.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-database-category</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-component-list=&quot;&lt;Component List Name&gt;&quot; data-cms-database-module=&quot;&lt;module-name&gt;&quot; data-cms-database-category=&quot;&lt;category-name&gt;&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">How does the injection of the database content
+                                                work?</h4>
+                                            <p>
+                                                Database Content is injected by two different ways. Which one is used,
+                                                depends on the <code>data-cms-internal</code> Tag.
+                                                <h5>Internal Tag is set</h5>
+                                                <p>
+                                                    If the internal Tag is set, the database Content is injected once at
+                                                    the beginning, after creating the website. After that, it is always
+                                                    injected if the database content changes. This is for example the
+                                                    case, if the customer changes his logo in the cloud or he adds a new
+                                                    membership.
+                                                    For database content, which exists multiple times (e.g. a customer
+                                                    has three memberships, which he wants on the website), the component
+                                                    list generates as many components, as content exists (e.g. three
+                                                    components for three memberships). The component type can be
+                                                    specified using the <code>data-cms-database-category</code> Tag at
+                                                    Component Level.
+                                                </p>
+                                                <h5>Internal Tag is <strong>NOT</strong> set</h5>
+                                                <p>
+                                                    If the internal Tag is <strong>NOT</strong> set, the database
+                                                    content will be injected, if the user actively selects it. This is
+                                                    for example the case, if the user adds a new service to his service
+                                                    page. He then can select from all predefined service templates (e.g.
+                                                    Sauna, Fitness-Circle, ...). If he selects one, the predefined data
+                                                    will be directly injected into the component.
+                                                </p>
+                                            </p>
+                                        </div>
+                                        <!--//content-->
+                                    </div>
+                                </div>
+                            </section>
+                            <section id="component-section" class="doc-section">
+                                <h2 class="section-title">Component Tagging</h2>
+                                <div id="component-basic" class="section-block">
+                                    <h3 class="block-title">Basic</h3>
+                                    <p>
+                                        Components must be tagged with a component name. This component name must be
+                                        unique,
+                                        unless components have exactly the same schema. They also require a component
+                                        category, to identify in which component list they can be rendered.
+                                    </p>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-component=&quot;&lt;Component Name&gt;&quot; data-cms-component-category=&quot;&lt;component-category&gt;&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                                <div id="component-unique" class="section-block">
+                                    <h3 class="block-title">Unique</h3>
+                                    <p>
+                                        Some Components should always be unique in a component list.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-unique</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-component=&quot;&lt;Component Name&gt;&quot; data-cms-component-category=&quot;&lt;component-category&gt;&quot; data-cms-unique=&quot;true&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </section>
+                            <section id="element-section" class="doc-section">
+                                <h2 class="section-title">Element Tagging</h2>
+                                <div id="element-basic" class="section-block">
+                                    <h3 class="block-title">Basic</h3>
+                                    <p>
+                                        Elements can appear in the scope of sections or in the scope of components. They
+                                        <strong>must have</strong> a unique element name inside the scope.
+                                    </p>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-element=&quot;&lt;Element Name&gt;&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                                <div id="element-text" class="section-block">
+                                    <h3 class="block-title">Text</h3>
+                                    <p>
+                                        The simplest exchangeable content, which can be defined on an element, is Text.
+                                        If this tag is set, the customer can exchange the text content in this element
+                                        on the website builder.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-text</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-element=&quot;Headline&quot; data-cms-text=&quot;true&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                    <div class="callout-block callout-warning">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-bug"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Element Text</h4>
+                                            <p>
+                                                The text content of an element should not include other html elements.
+                                                Instead it should only contain pure text. However it is possible in the
+                                                future to add some basic html text tags inside the text content like
+                                                head or paragraph elements.
+                                                It is <strong>NOT</strong> possible to add html tags containing some
+                                                custom classes inside the text. The customer in the website builder can
+                                                not add this custom tag elements, so they break the design.
+                                                <h5>Good Example:</h5>
+                                                <pre><code class="language-markup">
+&lt;div data-cms-element=&quot;Headline&quot; data-cms-text=&quot;true&quot;&gt; 
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+&lt;/div&gt;</code></pre>
+                                                <h5>Bad Example (Don't do this):</h5>
+                                                <pre><code class="language-markup">
+&lt;div data-cms-element=&quot;Headline&quot; data-cms-text=&quot;true&quot;&gt; 
+Lorem ipsum dolor sit amet, &lt;span class=&quot;custom-strong-class&quot;&gt;consectetuer&lt;/span&gt; adipiscing elit.
+&lt;/div&gt;</code></pre>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="callout-block callout-danger">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Text Margin</h4>
+                                            <p>
+                                                It is really important not to use spaces defined with "&amp;nbsp;" as
+                                                margin for a text element. The customer will not be able to add this
+                                                margin, the same it is required in the desing.
+                                            </p>
+                                            <p>
+                                                Always use a css margin on the element instead (e.g. the bootstrap class
+                                                "mr-2").
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="element-attributes" class="section-block">
+                                    <h3 class="block-title">Attributes</h3>
+                                    <p>
+                                        It is also possible to exchange element attributes, which are mainly images,
+                                        videos, or links. Each attribute which is exchangeable needs an attribute type,
+                                        which defines what this attribute contains.
+                                    </p>
+                                    <h4>Exsiting Attribute Types:</h4>
+                                    <ul class="list">
+                                        <li>IMG</li>
+                                        <li>VIDEO</li>
+                                        <li>STYLE_IMG</li>
+                                        <li>LINK</li>
+                                        <li>TEXT</li>
+                                    </ul>
+                                    <h4>Schema:</h4>
+                                    <p>
+                                        The attributes tag has the following schema:
+                                        <code>&lt;attribute-1&gt;:&lt;attribute-type&gt;;&lt;attribute-2&gt;:&lt;attribute-type&gt;;</code>
+                                    </p>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Attribute Type Link</h4>
+                                            <p>
+                                                The Link Attribute Type can include mutliple different links, like an
+                                                internal link to another page, an external link, tel links, mailto
+                                                links, or even just a <i>link</i> for opening a popup.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-attributes</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;img data-cms-element=&quot;Image&quot; src=&quot;path-to-image&quot; data-cms-attributes=&quot;src:IMG&quot;&gt;
+</code></pre>
+                                    </div>
+                                </div>
+                                <div id="element-nested-attributes" class="section-block">
+                                    <h3 class="block-title">Nested Attributes (e.g. Background Image in style)</h3>
+                                    <p>
+                                        It is also possible to exchange element nested attributes, which are mainly
+                                        background images. Each nested attribute which is exchangeable needs an
+                                        attribute type, which defines what this attribute contains.
+                                    </p>
+                                    <h4>Exsiting Attribute Types:</h4>
+                                    <ul class="list">
+                                        <li>IMG</li>
+                                        <li>VIDEO</li>
+                                        <li>STYLE_IMG</li>
+                                        <li>LINK</li>
+                                        <li>TEXT</li>
+                                    </ul>
+                                    <h4>Schema:</h4>
+                                    <p>
+                                        The nested attributes tag has the following schema:
+                                        <code>&lt;parent-attribute-1&gt;=&lt;nested-attribute-1&gt;:&lt;attribute-type&gt;,&lt;nested-attribute-2&gt;:&lt;attribute-type&gt;;&lt;parent-attribute-2&gt;=&lt;nested-attribute-1&gt;:&lt;attribute-type&gt;,&lt;nested-attribute-2&gt;:&lt;attribute-type&gt;;</code>
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-nested-attributes</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-element=&quot;Background Image&quot; style=&quot;background-image: url(path-to-image.png);&quot; data-cms-nested-attributes=&quot;style=background-image:STLYE_IMG&quot;&gt;
+</code></pre>
+                                    </div>
+                                    <div class="callout-block callout-warning">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-bug"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Attribute Type IMG vs. STLYE_IMG</h4>
+                                            <p>
+                                                <h5>IMG:</h5>
+                                                <p>
+                                                    At the attribute type IMG, the source to the image is directly
+                                                    injected
+                                                    into the attribute.
+                                                </p>
+                                                <h5>Example:</h5>
+                                                <p>
+                                                    The Layout Schema is defined like the following:
+                                                    <pre><code class="language-markup">
+&lt;img data-cms-element=&quot;Image&quot; src=&quot;...&quot; data-cms-attributes=&quot;src:IMG&quot;&gt;</code></pre>
+                                                </p>
+                                                <p>
+                                                    If the customer now wants to inject an image with the path
+                                                    "my/path/to/the/image.png", this path is directly injected into the
+                                                    defined "src" attribute and results in the following html element:
+                                                    <pre><code class="language-markup">
+&lt;img src=&quot;my/path/to/the/image.png&quot;&gt;</code></pre>
+                                                </p>
+                                                <h5>STYLE_IMG:</h5>
+                                                <p>
+                                                    At the attribute type STYLE_IMG, the source to the image is injected
+                                                    into the attribute with an enclosing "url()".
+                                                </p>
+                                                <h5>Example:</h5>
+                                                <p>
+                                                    The Layout Schema is defined like the following:
+                                                    <pre><code class="language-markup">
+&lt;div data-cms-element=&quot;Background Image&quot; style=&quot;background-image: url(...);&quot; data-cms-nested-attributes=&quot;style=background-image:STYLE_IMG&quot;&gt;</code></pre>
+                                                </p>
+                                                <p>
+                                                    If the customer now wants to inject an image with the path
+                                                    "my/path/to/the/image.png", this path is injected into the
+                                                    defined nested attribute "style" at "background-image" with an
+                                                    enclosing "url()" and results in the following html element:
+                                                    <pre><code class="language-markup">
+&lt;div style=&quot;background-image: url(my/path/to/the/image.png);&quot;&gt;</code></pre>
+                                                </p>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="element-internal" class="section-block">
+                                    <h3 class="block-title">Internal</h3>
+                                    <p>
+                                        Some attributes should not be displayed to the customer. Instead the content
+                                        should be injected from database data. Therefore the
+                                        <code>data-cms-internal</code> Tag can be used <strong>together</strong> with
+                                        the <code>data-cms-database-module</code> Tag.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-internal</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-element=&quot;Address&quot; data-cms-text=&quot;true&quot; data-cms-internal=&quot;true&quot; data-cms-database-module=&quot;master-data&quot;&gt;
+Customer Address
+&lt;/div&gt;
+</code></pre>
+                                    </div>
+                                </div>
+                                <div id="element-database" class="section-block">
+                                    <h3 class="block-title">Database Module</h3>
+                                    <p>
+                                        Some Elements should read their data from the database. This is for example the
+                                        case for customer master-data (Company Name, Address, Logo). For a full list of
+                                        database modules read <a href="database-modules.html">this.</a>
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-database-module</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-element=&quot;Address&quot; data-cms-text=&quot;true&quot; data-cms-internal=&quot;true&quot; data-cms-database-module=&quot;master-data&quot;&gt;
+Customer Address
+&lt;/div&gt;
+</code></pre>
+                                    </div>
+                                    <div class="callout-block callout-warning">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-bug"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Element Database Data and the internal Tag</h4>
+                                            <p>
+                                                On element scope, the <code>data-cms-database-module</code> Tag can only
+                                                be used <strong>together</strong> with the internal Tag. This results in
+                                                an element,
+                                                where the data is always only injected from the database. The customer
+                                                does not see this element.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Using the Database Module Tag inside of Database
+                                                Sections/Components</h4>
+                                            <p>
+                                                It is also possible to use the database module Tag for a single element,
+                                                inside of a section or component, where the data should also be injected
+                                                from the database.
+                                            </p>
+                                            <h5>Use Case:</h5>
+                                            <p>
+                                                This could be the case for the footer, where most of the data is
+                                                injected from the "master-data" Database-Module (e.g. address, company
+                                                name, opening hours, ...). But the footer should maybe also show a map
+                                                pointing to the correct address. Therefore we need to use the "map-data"
+                                                Database-Module, to get the exact coordinates for the customer address.
+                                            </p>
+                                            <h5>Example:</h5>
+                                            <p>
+                                                <pre><code class="language-markup">
+&lt;section data-cms-section=&quot;Footer&quot; data-cms-database-module=&quot;master-data&quot;&gt; 
+    &lt;div data-cms-element=&quot;address&quot; data-cms-text=&quot;true&quot;&gt;&lt;/div&gt; 
+    &lt;div data-cms-element=&quot;company-name&quot; data-cms-text=&quot;true&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;map&quot;&gt;
+        &lt;div data-cms-element=&quot;map-coordinate-long&quot; data-cms-text=&quot;true&quot; data-cms-internal=&quot;true&quot; data-cms-database-module=&quot;map-data&quot;&gt;&lt;/div&gt;
+        &lt;div data-cms-element=&quot;map-coordinate-lat&quot; data-cms-text=&quot;true&quot; data-cms-internal=&quot;true&quot; data-cms-database-module=&quot;map-data&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;                                                ...
+&lt;/section&gt;</code></pre>
+                                            </p>
+                                            <p>
+                                                In this example, the address and the company-name are both injected from
+                                                the parent scope database module "master-data", because the
+                                                "master-data" module contains the keys "address" and "company-name" (see
+                                                <a href="database-modules.html">here</a>).
+                                            </p>
+                                            <p>
+                                                The "map-coordinate-long" and "map-coordinate-lat" elements data
+                                                instead, will be injected from the other database module "map-data",
+                                                because they contain a direct database module tag together with an
+                                                internal tag.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <h4>Database Category</h4>
+                                    <p>
+                                        It is also possible to further categorize the database module, which should be
+                                        loaded. Click <a href="database-modules.html">here</a>, to see available
+                                        modules.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-database-category</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-element=&quot;Address&quot; data-cms-text=&quot;true&quot; data-cms-internal=&quot;true&quot; data-cms-database-module=&quot;master-data&quot; data-cms-database-category=&quot;&lt;database-category&gt;&quot;&gt;
+Customer Address
+&lt;/div&gt;
+</code></pre>
+                                    </div>
+                                </div>
+                                <div id="element-filter" class="section-block">
+                                    <h3 class="block-title">Filter (Images and Videos)</h3>
+                                    <p>
+                                        Sometimes we want the user to inject only some custom images or videos into an
+                                        Image or Video Element. This is espacially the case for transparent images. To
+                                        achieve this, the filter tag can be used, together with an image/video type.
+                                    </p>
+                                    <h4>Exsiting Filter Tags:</h4>
+                                    <ul class="list">
+                                        <li>transparent</li>
+                                    </ul>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-filter</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;img data-cms-element=&quot;Image&quot; src=&quot;path-to-image&quot; data-cms-attributes=&quot;src:IMG&quot; data-cms-filter=&quot;transparent&quot;&gt;
+</code></pre>
+                                    </div>
+                                </div>
+                                <div id="element-image-width-height" class="section-block">
+                                    <h3 class="block-title">Image Width and Height (Mandatory)</h3>
+                                    <p>
+                                        In order to make a responsive website layout, it is mostly mandatory to use
+                                        images, which have the correct width and height. We need to give the
+                                        customer in the website builder the possibility to crop the image he wants to
+                                        inject, to fit perfectly in the layout.
+                                    </p>
+                                    <p>
+                                        Therefore the website builder needs to know the exact width and height of the
+                                        image, which should be injected. In order to achieve this, we need to tag
+                                        <strong>each</strong> image with the corresponding tags.
+                                    </p>
+                                    <h4>Tags:</h4>
+                                    <p>
+                                        <code>data-cms-image-width</code>
+                                    </p>
+                                    <p>
+                                        <code>data-cms-image-height</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;img data-cms-element=&quot;Image&quot; src=&quot;path-to-image&quot; data-cms-attributes=&quot;src:IMG&quot; data-cms-image-width=&quot;1920&quot; data-cms-image-height=&quot;1080&quot;&gt;
+</code></pre>
+                                    </div>
+                                    <div class="callout-block callout-danger">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Width and Height</h4>
+                                            <p>
+                                                It is really important, to set the correct tags for
+                                                <strong>each</strong> image in the website layout. Otherwise the
+                                                website-buider can't give the customer the correct cropping size, which
+                                                results in a <strong>breaking</strong> design.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="element-tenant-data-only" class="section-block">
+                                    <h3 class="block-title">Tenant data only</h3>
+                                    <p>
+                                        For some website content, espacially images and videos, we don't want the
+                                        customer to inject his own images or videos, because it is very likely, that
+                                        they will break the design. In this case, we can use the tenant data only tag,
+                                        which only allows the customer to choose from the tenant images in the website
+                                        builder.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-tenant-data-only</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;img data-cms-element=&quot;Image&quot; src=&quot;...&quot; data-cms-attributes=&quot;src:IMG&quot; data-cms-tenant-data-only=&quot;true&quot;&gt;
+</code></pre>
+                                    </div>
+                                </div>
+                                <div id="element-info-box" class="section-block">
+                                    <h3 class="block-title">Info Box</h3>
+                                    <p>
+                                        For some elements, the customer should get some more information. This is for
+                                        example the case for "h1" and "h2" tags. These tags will be used for SEO
+                                        meta tagging and should therefore be considered wisely.
+                                    </p>
+                                    <h4>Exsiting Info Box Types:</h4>
+                                    <ul class="list">
+                                        <li>h1</li>
+                                        <li>h2</li>
+                                    </ul>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-info-box</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;h1 data-cms-element=&quot;Headline&quot; data-cms-text=&quot;true&quot; data-cms-info-box=&quot;h1&quot;&gt;
+My Headline
+&lt;/h1&gt;
+</code></pre>
+                                    </div>
+                                </div>
+                            </section>
+                            <section id="navigation-section" class="doc-section">
+                                <h2 class="section-title">Navigation Tagging</h2>
+                                <div id="navigation-basic" class="section-block">
+                                    <h3 class="block-title">Basic</h3>
+                                    <p>
+                                        The website navigation has to be tagged seperately and has it's own schema. Each
+                                        website can have exactly one main navigation (Other navigations has to be
+                                        handled via Component Lists).
+                                    </p>
+                                    <p>
+                                        The Navigation Schema supports as many sub-items, as required, however more than
+                                        two sub-items may be sufficient.
+                                    </p>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-navigation=&quot;main-navigation&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                                <div id="navigation-nav-items" class="section-block">
+                                    <h3 class="block-title">Nav Items</h3>
+                                    <p>
+                                        A Navigation Item is always tagged with the corresponding nav-item tag. It
+                                        doesn't matter on which level the nav-item is, it requires always the same tag.
+                                        Inside the tag, the nav-level is defined. As already mentioned, the nav-level
+                                        can be as deep as required, but mostly it should be in the range from 1 to 3.
+                                    </p>
+                                    <p>
+                                        In addition to the actual nav-item, this tag has also to be used as container
+                                        for sub-items. In this case, it has to be defined as
+                                        <code>data-cms-nav-item=&quot;&lt;parent-level&gt;_&lt;children-level&gt;&quot;</code>.
+                                        <h4>Example:</h4>
+                                        <p>
+                                            For the container on nav-level 1, which holds all sub-items on nav-level 2,
+                                            it should be defined as <code>data-cms-nav-item=&quot;1_2&quot;</code>.
+                                        </p>
+                                    </p>
+                                    <h4 class="block-title">Nav Item Active Class</h4>
+                                    <p>
+                                        Together with the nav-item tag, we always have to define an tag, which holds the
+                                        required active class, which should be injected into the nav-item class list, if
+                                        this page is active. This class should mostly called "active", but can differ on
+                                        sub-nav-items, why we have to define it on each nav item.
+                                    </p>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">How does the injection of the active class works?
+                                            </h4>
+                                            <p>
+                                                The nav item active class is injected into the nav-item class list, if
+                                                the nav-item <a class="scrollto" href="#navigation-link">link</a> equals
+                                                the current page.
+                                                <h5>Example:</h5>
+                                                <p>
+                                                    We have two pages: A homepage with the filename <i>index.html</i>
+                                                    and a news page with the filename <i>news.html</i>.
+                                                </p>
+                                                <p>
+                                                    The Navigation will be injected into both pages and looks like the
+                                                    following:
+                                                    <pre><code class="language-markup">
+&lt;div data-cms-navigation=&quot;main-navigation&quot;&gt; 
+    &lt;div data-cms-nav-item=&quot;1&quot; data-cms-active-class=&quot;active&quot;&gt;
+        &lt;a href=&quot;index.html&quot; data-cms-nav-item-text=&quot;true&quot; data-cms-nav-item-link=&quot;href&quot;&gt;Homepage&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div data-cms-nav-item=&quot;1&quot; data-cms-active-class=&quot;active&quot;&gt;
+        &lt;a href=&quot;news.html&quot; data-cms-nav-item-text=&quot;true&quot; data-cms-nav-item-link=&quot;href&quot;&gt;News&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                                </p>
+                                                <p>
+                                                    The Navigation Injector compares the current filename with the link
+                                                    of the nav-item. If the filename equals the link in the nav-item,
+                                                    the active class will be injected into the class list.
+                                                </p>
+                                                <h5>Result:</h5>
+                                                <p>
+                                                    <pre><code class="language-markup"><!---->
+&lt;!--index.html--&gt;                                                     
+&lt;div data-cms-navigation=&quot;main-navigation&quot;&gt; 
+    &lt;div class=&quot;active&quot;&gt;
+        &lt;a href=&quot;index.html&quot;&gt;Homepage&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;a href=&quot;news.html&quot;&gt;News&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                                    <pre><code class="language-markup"><!---->
+&lt;!--news.html--&gt;                                                     
+&lt;div data-cms-navigation=&quot;main-navigation&quot;&gt; 
+    &lt;div&gt;
+        &lt;a href=&quot;index.html&quot;&gt;Homepage&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;active&quot;&gt;
+        &lt;a href=&quot;news.html&quot;&gt;News&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                                </p>
+                                                <h5>Sub Nav-Items</h5>
+                                                <p>
+                                                    This works also for sub-nav-items. If an sub-nav-item is active, all
+                                                    parents will set also to active.
+                                                </p>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <h4>Tags:</h4>
+                                    <p>
+                                        <code>data-cms-nav-item</code>
+                                    </p>
+                                    <p>
+                                        <code>data-cms-active-class</code>
+                                    </p>
+                                    <h4>Full Example including sub nav-items:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-navigation=&quot;main-navigation&quot;&gt; 
+    &lt;div data-cms-nav-item=&quot;1&quot; data-cms-active-class=&quot;active&quot;&gt;
+        ...
+    &lt;/div&gt;
+    &lt;div data-cms-nav-item=&quot;1&quot; data-cms-active-class=&quot;active&quot;&gt;
+        ...
+    &lt;/div&gt;
+    &lt;div data-cms-nav-item=&quot;1&quot; data-cms-active-class=&quot;active&quot;&gt;
+        ...
+        &lt;div data-cms-nav-item=&quot;1_2&quot;&gt;
+            &lt;div data-cms-nav-item=&quot;2&quot; data-cms-active-class=&quot;sub-active&quot;&gt;
+                ... 
+            &lt;/div&gt;
+            &lt;div data-cms-nav-item=&quot;2&quot; data-cms-active-class=&quot;sub-active&quot;&gt;
+                ...          
+            &lt;/div&gt;                                
+        &lt;/div&gt;                                  
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Sub nav-item active class</h4>
+                                            <p>
+                                                As you can see in the above example, we can use different active classes
+                                                for different nav-levels.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="navigation-text" class="section-block">
+                                    <h3 class="block-title">Nav Item Text</h3>
+                                    <p>
+                                        A Nav Item mostly has an additional child element, which holds the actual
+                                        nav-item text (and the <a class="scrollto" href="#navigation-link">link</a>). To
+                                        define this element, we use the
+                                        nav-item text tag.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-nav-item-text</code>
+                                    </p>
+                                    <h4>Full Example including sub nav-items:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-navigation=&quot;main-navigation&quot;&gt; 
+    &lt;div data-cms-nav-item=&quot;1&quot; data-cms-active-class=&quot;active&quot;&gt;
+        &lt;a data-cms-nav-item-text=&quot;true&quot;&gt;Homepage&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div data-cms-nav-item=&quot;1&quot; data-cms-active-class=&quot;active&quot;&gt;
+        &lt;a data-cms-nav-item-text=&quot;true&quot;&gt;News&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div data-cms-nav-item=&quot;1&quot; data-cms-active-class=&quot;active&quot;&gt;
+        &lt;div data-cms-nav-item-text=&quot;true&quot;&gt;Services&lt;/div&gt;
+        &lt;div data-cms-nav-item=&quot;1_2&quot;&gt;
+            &lt;div data-cms-nav-item=&quot;2&quot; data-cms-active-class=&quot;sub-active&quot;&gt;
+                &lt;a data-cms-nav-item-text=&quot;true&quot;&gt;Service Category 1&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div data-cms-nav-item=&quot;2&quot; data-cms-active-class=&quot;sub-active&quot;&gt;
+                &lt;a data-cms-nav-item-text=&quot;true&quot;&gt;Service Category 1&lt;/a&gt;
+            &lt;/div&gt;                                
+        &lt;/div&gt;                                  
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                                <div id="navigation-link" class="section-block">
+                                    <h3 class="block-title">Nav Item Link</h3>
+                                    <p>
+                                        Together with the nav-item <a class="scrollto" href="#navigation-text">text</a>,
+                                        the child element holds also the nav-item link, in order to make the navigation
+                                        functional. Because the link is not always defined with the basic "href"
+                                        attribute, it has to be defined with this additional tag (This is for example
+                                        the case for <a class="scrollto" href="#popup-section-open">popup-section
+                                            links</a>).
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-nav-item-link</code>
+                                    </p>
+                                    <h4>Full Example including sub nav-items:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-navigation=&quot;main-navigation&quot;&gt; 
+    &lt;div data-cms-nav-item=&quot;1&quot; data-cms-active-class=&quot;active&quot;&gt;
+        &lt;a href=&quot;index.html&quot; data-cms-nav-item-text=&quot;true&quot; data-cms-nav-item-link=&quot;href&quot;&gt;Homepage&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div data-cms-nav-item=&quot;1&quot; data-cms-active-class=&quot;active&quot;&gt;
+        &lt;a href=&quot;index.html&quot; data-cms-nav-item-text=&quot;true&quot; data-cms-nav-item-link=&quot;href&quot;&gt;News&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div data-cms-nav-item=&quot;1&quot; data-cms-active-class=&quot;active&quot;&gt;
+        &lt;div data-cms-nav-item-text=&quot;true&quot;&gt;Services&lt;/div&gt;
+        &lt;div data-cms-nav-item=&quot;1_2&quot;&gt;
+            &lt;div data-cms-nav-item=&quot;2&quot; data-cms-active-class=&quot;sub-active&quot;&gt;
+                &lt;a href=&quot;index.html&quot; data-cms-nav-item-text=&quot;true&quot; data-cms-nav-item-link=&quot;href&quot;&gt;Service Category 1&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div data-cms-nav-item=&quot;2&quot; data-cms-active-class=&quot;sub-active&quot;&gt;
+                &lt;a href=&quot;index.html&quot; data-cms-nav-item-text=&quot;true&quot; data-cms-nav-item-link=&quot;href&quot;&gt;Service Category 1&lt;/a&gt;
+            &lt;/div&gt;                                
+        &lt;/div&gt;                                  
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Nav Item holding sub nav-items</h4>
+                                            <p>
+                                                As you can see in the above example, the "Services" Nav Item does not
+                                                have a nav-item-link tag itself, because it acts only as parent nav-item
+                                                for
+                                                some sub nav-items.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section id="form-section" class="doc-section">
+                                <h2 class="section-title">Form Tagging</h2>
+                                <div id="form-basic" class="section-block">
+                                    <h3 class="block-title">Basic</h3>
+                                    <p>
+                                        All forms will be sent to the CRM of the cloud. Forms should always send a name
+                                        and a mail to the cloud. All other fields are optional. Forms are mostly simple
+                                        contact forms, including name, mail, number and a customer message. However,
+                                        forms can also be more complex and even used for online sales and bookings.
+                                    </p>
+                                    <p>
+                                        All forms should have the form tag with a corresponding name.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-form</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;form data-cms-form=&quot;Contact Form&quot;&gt; 
+    ...
+&lt;/form&gt;</code></pre>
+                                    </div>
+                                </div>
+                                <div id="form-input-fields" class="section-block">
+                                    <h3 class="block-title">Input Fields</h3>
+                                    <p>
+                                        A form can have multiple different input/select fields. The name of this field
+                                        must equal exactly the name defined below. Otherwise, the data will not be
+                                        evaluated correctly in the cloud.
+                                    </p>
+                                    <h4>Input Fields Personal Information:</h4>
+                                    <ul>
+                                        <li>title: e.g. Phd., Prof.</li>
+                                        <li>gender: e.g. M, W</li>
+                                        <li>mail: e.g. Max@Mustermann.de</li>
+                                        <li>prename: e.g. Max</li>
+                                        <li>surname: e.g. Mustermann</li>
+                                        <li>birthday: e.g. 01.10.1990</li>
+                                        <li>address: e.g. Hauptstraße</li>
+                                        <li>houseNumber: e.g. 21</li>
+                                        <li>zipCode: e.g. 34567</li>
+                                        <li>city: e.g. Bruchsal</li>
+                                        <li>phoneNumber: e.g. +49123456789</li>
+                                    </ul>
+                                    <h4>Input Fields Bank Account Information:</h4>
+                                    <ul>
+                                        <li>accountHolder: e.g. Max Mustermann</li>
+                                        <li>iban: e.g. DE11 0000 1111 0000 1111 0000 11</li>
+                                        <li>bic: e.g. XXXXXXXXXX</li>
+                                        <li>bankName: e.g. Sparkasse</li>
+                                    </ul>
+                                    <h4>Input Fields Contact Form:</h4>
+                                    <ul>
+                                        <li>customerMessage: e.g. Please contact me for a trial training.</li>
+                                    </ul>
+                                    <h4>Input Fields Metadata (Hidden):</h4>
+                                    <ul>
+                                        <li>type: e.g. Lead / Member / Question</li>
+                                        <li>tags: e.g. new / complaint / booking / sale</li>
+                                    </ul>
+                                    <h4>Input Fields Membership (Hidden):</h4>
+                                    <ul>
+                                        <li>membershipId: Will be injected automatically, but is still
+                                            <strong>required</strong> for
+                                            membership forms</li>
+                                    </ul>
+                                </div>
+                                <div id="form-contact-form" class="section-block">
+                                    <h3 class="block-title">Basic Contact Form</h3>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;form data-cms-form=&quot;Contact Form&quot;&gt; 
+    &lt;input type=&quot;text&quot; autocomplete=&quot;given-name&quot; name=&quot;prename&quot; data-cms-required&gt;
+    &lt;input type=&quot;text&quot; autocomplete=&quot;family-name&quot; name=&quot;surname&quot;&gt;
+    &lt;input type=&quot;email&quot; autocomplete=&quot;email&quot; name=&quot;mail&quot; data-cms-required&gt;
+    &lt;input type=&quot;tel&quot; autocomplete=&quot;tel&quot; name=&quot;number&quot;&gt;
+    &lt;textarea name=&quot;customerMessage&quot; data-cms-required&gt;&lt;/textarea&gt;
+&lt;/form&gt;</code></pre>
+                                    </div>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Form Validation and Form Submit</h4>
+                                            <h5>Form Validation</h5>
+                                            <p>
+                                                As you may noticed in the above example, the prename and mail input have
+                                                both an additional tag <code>data-cms-required</code>. This tag can be
+                                                used, together with the <a href="library.html">library
+                                                    form-validation</a> for built-in form-validation.
+                                            </p>
+                                            <p>
+                                                It is still possible to make a custom form-validation (even with the <a
+                                                    href="library.html">library functionality</a>). This is often
+                                                required for a step based input form.
+                                            </p>
+                                            <p>
+                                                Generally, the form-validation is not injected automatically. If the
+                                                implemented form needs a form-validation, you have to import at least
+                                                the basic form-validation script from the library.
+                                            </p>
+                                            <h5>Form Submit</h5>
+                                            <p>
+                                                The form submition is injected automatically, because the form
+                                                validation differs in the domain, where we have to send the data adapted
+                                                to the customer.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="callout-block callout-danger">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Do not overwrite the form submit!</h4>
+                                            <p>
+                                                As mentioned above, the form submit is injected automatically by the
+                                                cloud. In order to have a working form submit, it is not allowed to
+                                                overwrite the form submit for other functionality like a form validation
+                                                or others.
+                                            </p>
+                                            <p>
+                                                If you want to implement a custom from validation, you can do this also
+                                                by the event handler 'click' on the submit button and stop the
+                                                propagation of the event. In this case the submit function will not be
+                                                called and the form-validation still works as expected.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section id="popup-section-section" class="doc-section">
+                                <h2 class="section-title">Popup Section Tagging</h2>
+                                <div id="popup-section-basic" class="section-block">
+                                    <h3 class="block-title">Basic</h3>
+                                    <p>
+                                        Additional to basic sections, it is also possible to tag popup sections. Popup
+                                        Sections have basically the same schema as normal sections, with the difference,
+                                        that they should only be visible after a click on some link. They should also be
+                                        visible as overlay above the normal sections. For this type of sections you can
+                                        use the popup section tag.
+                                    </p>
+                                    <h4>Possible additional Tags:</h4>
+                                    <ul>
+                                        <li><a class="nav-link scrollto" href="#section-unique">Unique</a></li>
+                                        <li><a class="nav-link scrollto" href="#section-global">Global</a></li>
+                                        <li><a class="nav-link scrollto" href="#section-internal">Internal</a></li>
+                                        <li><a class="nav-link scrollto" href="#section-database">Database Modules</a>
+                                        </li>
+                                    </ul>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-popup-section</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;section data-cms-popup-section=&quot;&lt;Popup Section Name&gt;&quot;&gt; 
+    ...
+&lt;/section&gt;</code></pre>
+                                    </div>
+                                </div>
+                                <div id="popup-section-open" class="section-block">
+                                    <h3 class="block-title">Popup Section Open</h3>
+                                    <p>
+                                        The customer should have the possibility, to open a specific popup section with
+                                        a custom link. The popup open functionality should therefore be completely
+                                        generic.
+                                    </p>
+                                    <p>
+                                        In order to achieve this, don't implement the open functionality on your own.
+                                        Instead, use the <a href="library.html">popup section controller from the
+                                            library</a>. If you need additional functionality (e.g. a fade in), you can
+                                        use the in-built listeners of the controller, also described in the <a
+                                            href="library.html">library</a>.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-popup-open</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <p>
+                                        In the example below, a click on the element "Popup Open Link", which is in the
+                                        scope of the section "Section 1" will display the popup section "My Popup
+                                        Section".
+                                    </p>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;body&gt;                                            
+    &lt;section data-cms-popup-section=&quot;My Popup Section&quot;&gt; 
+        ...
+    &lt;/section&gt;
+    &lt;section data-cms-section=&quot;Section 1&quot;&gt;
+        &lt;div data-cms-element=&quot;Popup Open Link&quot; data-cms-popup-open=&quot;My Popup Section&quot; data-cms-attributes=&quot;data-cms-popup-open:LINK;&quot;&gt;
+    &lt;/section&gt;
+&lt;/body&gt;</code></pre>
+                                    </div>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Popup Section Open</h4>
+                                            <p>
+                                                As you may noticed in the above example, we defined the
+                                                <code>data-cms-popup-open</code> in the <code>data-cms-attributes</code>
+                                                Tag as LINK. By doing so, the customer can change this link in the
+                                                website builder and also change the link to an internal or external page
+                                                link.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="callout-block callout-danger">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Popup Section Open functionality</h4>
+                                            <p>
+                                                The internal implementation of the popup sections works with the basic
+                                                <code>style display</code> attribute. All popup-sections should
+                                                initially be set to <code>style.display = "none"</code>. A click on
+                                                <code>data-cms-popup-open</code> including the corresponding Popup
+                                                Section name, will result in setting the popup section to
+                                                <code>style.display = "block"</code>.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="popup-section-close" class="section-block">
+                                    <h3 class="block-title">Popup Section Close</h3>
+                                    <p>
+                                        For a best user experience, an open popup section should also display an
+                                        additional close Button, which can be used to close all sections which are
+                                        currently open.
+                                    </p>
+                                    <p>
+                                        In order to achieve this, don't implement the close functionality on your own.
+                                        Instead, use the <a href="library.html">popup section controller from the
+                                            library</a>. If you need additional functionality (e.g. a fade out), you can
+                                        use the in-built listeners of the controller, also described in the <a
+                                            href="library.html">library</a>.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-popup-close</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <p>
+                                        In the example below, a click on the first div will close all currently opened
+                                        popup sections. The popup section close div will be displayed
+                                        <strong>automatically</strong>, if a popup section is shown.
+                                    </p>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;body&gt;
+    &lt;div data-cms-popup-close=&quot;true&quot;&gt; 
+        ...
+    &lt;/div&gt;                                            
+    &lt;section data-cms-popup-section=&quot;My Popup Section&quot;&gt; 
+        ...
+    &lt;/section&gt;
+    &lt;section data-cms-section=&quot;Section 1&quot;&gt;
+        &lt;div data-cms-element=&quot;Popup Open Link&quot; data-cms-popup-open=&quot;My Popup Section&quot; data-cms-attributes=&quot;data-cms-popup-open:LINK;&quot;&gt;
+    &lt;/section&gt;
+&lt;/body&gt;</code></pre>
+                                    </div>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Popup Section Close</h4>
+                                            <p>
+                                                As you may noticed in the above example, the popup close div is in the
+                                                scope of the <code>&lt;body&gt;</code> Tag. This is just one possible
+                                                implementation. The close button can also be in the scope of the popup
+                                                section itself.
+                                            </p>
+                                            <p>
+                                                A click on the close button will always close <strong>all</strong> popup
+                                                sections. If you reference a popup section from another popup section,
+                                                there should always be a <a class="scrollto"
+                                                    href="#popup-section-close">back button </a>in addtion to the close
+                                                button.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="popup-section-back" class="section-block">
+                                    <h3 class="block-title">Popup Section Back</h3>
+                                    <p>
+                                        For the best user experience, you should always add a back button for
+                                        popup sections in the website layout. Even if the Layout does not include
+                                        stacked popup-sections on its own, it could still be possible, that the customer
+                                        implements stacked popup-sections on his own.
+                                    </p>
+                                    <p>
+                                        In order to achieve this, don't implement the back functionality on your own.
+                                        Instead, use the <a href="library.html">popup section controller from the
+                                            library</a>. If you need additional functionality (e.g. a fade out), you can
+                                        use the in-built listeners of the controller, also described in the <a
+                                            href="library.html">library</a>.
+                                    </p>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>data-cms-popup-back</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <p>
+                                        In the example below, a click on the element "Popup Open Link 1" in the scope of
+                                        "Section 1", will open the Popup Section with the name "My Popup Section 1".
+                                        After this popup section is opened, the user can click on the element "Popup
+                                        Open Link 2" in order to open the popup section "My Popup Section 2".
+                                    </p>
+                                    <p>
+                                        This results in a displayed back button, which the user know can click, to jump
+                                        back to the popup section "My Popup Section 1" again.
+                                    </p>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;body&gt;
+    &lt;div data-cms-popup-back=&quot;true&quot;&gt; 
+        ...
+    &lt;/div&gt;   
+    &lt;div data-cms-popup-close=&quot;true&quot;&gt; 
+        ...
+    &lt;/div&gt;                                            
+    &lt;section data-cms-popup-section=&quot;My Popup Section 1&quot;&gt; 
+        &lt;div data-cms-element=&quot;Popup Open Link 2&quot; data-cms-popup-open=&quot;My Popup Section 2&quot; data-cms-attributes=&quot;data-cms-popup-open:LINK;&quot;&gt;
+    &lt;/section&gt;
+    &lt;section data-cms-popup-section=&quot;My Popup Section 2&quot;&gt; 
+        ...
+    &lt;/section&gt;
+    &lt;section data-cms-section=&quot;Section 1&quot;&gt;
+        &lt;div data-cms-element=&quot;Popup Open Link 1&quot; data-cms-popup-open=&quot;My Popup Section 1&quot; data-cms-attributes=&quot;data-cms-popup-open:LINK;&quot;&gt;
+    &lt;/section&gt;
+&lt;/body&gt;</code></pre>
+                                    </div>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Popup Section Back</h4>
+                                            <p>
+                                                As you may noticed in the above example, the popup back div is in the
+                                                scope of the <code>&lt;body&gt;</code> Tag. This should be mostly the
+                                                expected case. Otherwise the back button may not be shown.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section id="copies-section" class="doc-section">
+                                <h2 class="section-title">Copies Tagging</h2>
+                                <div id="copies-basic" class="section-block">
+                                    <h3 class="block-title">Basic</h3>
+                                    <p>
+                                        As you may noticed in the previous sections, it is not possible to define an
+                                        element or a component list two times, inside the parent scope, because it is
+                                        not allowed, to name two elements the same.
+                                    </p>
+                                    <p>
+                                        Somtimes however, it may be the case that we want the exact same content inside
+                                        two elements or wen want the content of a component list also inside another
+                                        component list.
+                                    </p>
+                                    <p>
+                                        This could be the case for a step based membership form for example. We present
+                                        some data on each step and we want to display a conclusion with all the previous
+                                        data again on the last step.
+                                    </p>
+                                    <p>
+                                        In order to make this possible, we have to define the copy tag, with the
+                                        corresponding element or component list name.
+                                    </p>
+                                    <h4>Tags:</h4>
+                                    <p>
+                                        <code>data-cms-copy-element</code>
+                                    </p>
+                                    <p>
+                                        <code>data-cms-copy-component-list</code>
+                                    </p>
+                                    <h4>Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;section data-cms-section=&quot;&lt;Section 1&gt;&quot;&gt;
+    &lt;!--step 1--&gt;
+    &lt;div data-cms-element=&quot;Membership Price&quot;&gt;&lt;/div&gt;
+    &lt;div data-cms-component-list=&quot;Membership Services&quot;&gt;
+        ...
+    &lt;/div&gt;
+    &lt;!--step 2--&gt;
+    &lt;div data-cms-copy-element=&quot;Membership Price&quot;&gt;&lt;/div&gt;
+    &lt;div data-cms-copy-component-list=&quot;Membership Services&quot;&gt;
+        ...
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                                    </div>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Copy Tags</h4>
+                                            <p>
+                                                As you can see in the above example, we defined the element and
+                                                component list in the step-1. This data could be injected by a database
+                                                module, or by the customer himself.
+                                            </p>
+                                            <p>
+                                                In step-2 we defined the same element and component-list, but with the
+                                                copy tag. This will copy the complete content of the element and
+                                                component list and put it into the copy tags.
+                                            </p>
+                                            <p>
+                                                It is possible to use the copy tags as often as required, even with the
+                                                same name.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!--//content-inner-->
+                    </div>
+                    <!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                <a class="nav-link scrollto" href="#page-section">Page Tagging</a>
+                                <!--//nav-->
+                                <a class="nav-link scrollto" href="#section-section">Section Tagging</a>
+                                <nav class="doc-sub-menu nav flex-column">
+                                    <a class="nav-link scrollto" href="#section-basic">Basic</a>
+                                    <a class="nav-link scrollto" href="#section-fixed">Fixed</a>
+                                    <a class="nav-link scrollto" href="#section-unique">Unique</a>
+                                    <a class="nav-link scrollto" href="#section-global">Global</a>
+                                    <a class="nav-link scrollto" href="#section-internal">Internal</a>
+                                    <a class="nav-link scrollto" href="#section-database">Database Modules</a>
+                                </nav>
+                                <a class="nav-link scrollto" href="#component-list-section">Component List Tagging</a>
+                                <nav class="doc-sub-menu nav flex-column">
+                                    <a class="nav-link scrollto" href="#component-list-basic">Basic</a>
+                                    <a class="nav-link scrollto" href="#component-list-min">Minimum number of
+                                        components</a>
+                                    <a class="nav-link scrollto" href="#component-list-max">Maximum number of
+                                        components</a>
+                                    <a class="nav-link scrollto" href="#component-list-internal">Internal</a>
+                                    <a class="nav-link scrollto" href="#component-list-database">Database Modules</a>
+                                </nav>
+                                <a class="nav-link scrollto" href="#component-section">Component Tagging</a>
+                                <nav class="doc-sub-menu nav flex-column">
+                                    <a class="nav-link scrollto" href="#component-basic">Basic</a>
+                                    <a class="nav-link scrollto" href="#component-unique">Unique</a>
+                                </nav>
+                                <a class="nav-link scrollto" href="#element-section">Element Tagging</a>
+                                <nav class="doc-sub-menu nav flex-column">
+                                    <a class="nav-link scrollto" href="#element-basic">Basic</a>
+                                    <a class="nav-link scrollto" href="#element-text">Text</a>
+                                    <a class="nav-link scrollto" href="#element-attributes">Attributes</a>
+                                    <a class="nav-link scrollto" href="#element-nested-attributes">Nested Attributes
+                                        (e.g. Background Image)</a>
+                                    <a class="nav-link scrollto" href="#element-internal">Internal</a>
+                                    <a class="nav-link scrollto" href="#element-database">Database</a>
+                                    <a class="nav-link scrollto" href="#element-filter">Filter</a>
+                                    <a class="nav-link scrollto" href="#element-image-width-height">Image Width and
+                                        Height (Mandatory)</a>
+                                    <a class="nav-link scrollto" href="#element-tenant-data-only">Tenant Data Only</a>
+                                    <a class="nav-link scrollto" href="#element-info-box">Info Box</a>
+                                </nav>
+                                <a class="nav-link scrollto" href="#navigation-section">Navigation Tagging</a>
+                                <nav class="doc-sub-menu nav flex-column">
+                                    <a class="nav-link scrollto" href="#navigation-basic">Basic</a>
+                                    <a class="nav-link scrollto" href="#navigation-nav-items">Nav Items (including Sub
+                                        Nav Items)</a>
+                                    <a class="nav-link scrollto" href="#navigation-text">Nav Item Text</a>
+                                    <a class="nav-link scrollto" href="#navigation-link">Nav Item Link</a>
+                                </nav>
+                                <a class="nav-link scrollto" href="#form-section">Form Tagging</a>
+                                <nav class="doc-sub-menu nav flex-column">
+                                    <a class="nav-link scrollto" href="#form-basic">Basic</a>
+                                    <a class="nav-link scrollto" href="#form-input-fields">Input Fields</a>
+                                    <a class="nav-link scrollto" href="#form-contact-form">Basic Contact Form
+                                        (Example)</a>
+                                </nav>
+                                <a class="nav-link scrollto" href="#copies-section">Copies Tagging</a>
+                            </nav>
+                            <!--//doc-menu-->
+                        </div>
+                    </div>
+                    <!--//doc-sidebar-->
+                </div>
+                <!--//doc-body-->
+            </div>
+            <!--//container-->
+        </div>
+        <!--//doc-wrapper-->
+
+    </div>
+    <!--//page-wrapper-->
+
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->.
+            :) If you'd like to use the template without the attribution, you can buy the commercial license via our
+            website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a
+                    href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+
+        </div>
+        <!--//container-->
+    </footer>
+    <!--//footer-->
+
+
+    <!-- Main Javascript -->
+    <script type="text/javascript" src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

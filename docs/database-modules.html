@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Database Modules - webmotion.cloud tagging documentation</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link
+        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body>
+    <div class="page-wrapper">
+
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">Tagging Docs</span>
+                        </a>
+                    </h1>
+                </div>
+                <!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Database Modules</li>
+                </ol>
+                <div class="top-search-box">
+                    <form class="form-inline search-form justify-content-center" action="" method="get">
+
+                        <input type="text" placeholder="Search..." name="search" class="form-control search-input">
+
+                        <button type="submit" class="btn search-btn" value="Search"><i
+                                class="fas fa-search"></i></button>
+
+                    </form>
+                </div>
+            </div>
+            <!--//container-->
+        </header>
+        <!--//header-->
+
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><span aria-hidden="true" class="icon icon_genius"></span> Overview Database
+                        Modules</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Last updated: June 1th, 2021</div>
+                </div>
+                <!--//doc-header-->
+                <div id="showcase" class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            <section id="page-section" class="doc-section">
+                                <h2 class="section-title">Database Module Structure</h2>
+                                <div class="section-block">
+                                    <p>Database modules allways have the same structure (defined in json), which helps
+                                        to simplify the way they can be used.</p>
+                                    <h6>A Module has the following attributes:</h6>
+                                    <ul class="list">
+                                        <li>name: The name referenced with <code>data-cms-database-module</code></li>
+                                        <li>category: The optional category referenced with
+                                            <code>data-cms-database-category</code></li>
+                                        <li>schema: The schema, which will be injected</li>
+                                    </ul>
+                                    <h6>The schema is an object, where the keys must match the
+                                        <code>data-cms-element</code> Taggs:</h6>
+                                    <p>
+                                        For example, you have a database module <i>master-data</i>, which has the
+                                        following Schema:
+                                        <div class="code-block">
+                                            <pre class="language-javascript"><code class="language-javascript">{
+    name: ModuleElement;
+    companyName: ModuleElement;
+    address: ModuleElement;
+}                                      
+</code></pre>
+                                            In this case, you can access for example the company name with
+                                            <code>data-cms-element="companyName"</code> and all attributes, nested
+                                            attributes and text which are defined in the element will be injected from
+                                            the schema.
+                                    </p>
+                                    <h6>
+                                        The <b>ModuleElement</b>:
+                                    </h6>
+                                    <p>
+                                        The module element contains the components for the component list, the text,
+                                        attributes and nested attributes, just like in the standard tagging.
+                                    </p>
+                                </div>
+                            </section>
+                            <section id="page-section" class="doc-section">
+                                <h2 class="section-title">How to use the database modules</h2>
+                                <div class="section-block">
+                                    <h6>
+                                        Consider the following example:
+                                    </h6>
+                                    <p>
+                                        We want to inject some master data from the database in our website, so the
+                                        customer does not have to manually exchange all the master-data. Instead it will
+                                        be injected from the database at every occurrence.
+                                    </p>
+                                    <h6>
+                                        The database module has the following schema:
+                                    </h6>
+                                    <div class="code-block">
+                                        <pre class="language-javascript"><code class="language-javascript">{
+    name: {
+        text: {
+            content: "My Fitness Studio"
+        },
+        attributes: [
+            {
+                name: "href",
+                content: "https://www.google.com/maps/search/?api=1&query=Street Name+1\n11111 MyCity+My Fitness Studio",
+                type: "LINK"
+            }
+        ],
+        nestedAttributes: []
+    },
+    owner: {
+        text: {
+            content: "Max Mustermann"
+        },
+        attributes: [],
+        nestedAttributes: []
+    },
+    "company-name": {
+        text: {
+            content: "My Fitness Studio GmbH"
+        },
+        attributes: [
+            {
+                name: "href",
+                content: "https://www.google.com/maps/search/?api=1&query=Street Name+1\n11111 MyCity+My Fitness Studio",
+                type: "LINK"
+            }
+        ],
+        nestedAttributes: []
+    },
+    address: {
+        text: {
+            content: "Street Name 1, 11111 MyCity"
+        },
+        attributes: [
+            {
+                name: "href",
+                content: "https://www.google.com/maps/search/?api=1&query=Street Name+1\n11111 MyCity+My Fitness Studio",
+                type: "LINK"
+            }
+        ],
+        nestedAttributes: []
+    },
+}                                      
+</code></pre>
+                                    </div>
+                                    <h6>Using the database module in the HTML File:</h6>
+                                    <p>
+                                        Now we want to use this database module with the defined schema to inject
+                                        the data into our HTML Website. As you can see in the schema the elements
+                                        often have more data, than just the text itself. Therefore it is possible to
+                                        inject not only the company name into an element, but also define a link, so
+                                        the user will be redirected to google maps, if he clicks on the link.
+                                    </p>
+                                    <p>
+                                        In the following example, we will inject the company name and the address
+                                        into the footer section.
+                                    </p>
+                                    <div class="code-block">
+                                        <h6>Tagged HTML Code:</h6>
+                                        <pre><code class="language-markup">
+&lt;section data-cms-section=&quot;Footer&quot;&gt;
+    &lt;div data-cms-element=&quot;company-name&quot; data-cms-text=&quot;true&quot; data-cms-attributes=&quot;href:LINK;&quot; href=&quot;&quot;&gt;&lt;/div&gt;
+    &lt;div data-cms-element=&quot;address&quot; data-cms-text=&quot;true&quot; data-cms-attributes=&quot;href:LINK;&quot; href=&quot;&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;
+                                            </code></pre>
+                                    </div>
+                                    <p>
+                                        This will result in the following HTML:
+                                    </p>
+                                    <div class="code-block">
+                                        <h6>HTML Code after the database data injection:</h6>
+                                        <pre><code class="language-markup">
+&lt;section data-cms-section=&quot;Footer&quot;&gt;
+    &lt;div href=&quot;https://www.google.com/maps/search/?api=1&query=Street Name+1\n11111 MyCity+My Fitness Studio&quot;&gt;
+        My Fitness Studio GmbH
+    &lt;/div&gt;
+    &lt;div href=&quot;https://www.google.com/maps/search/?api=1&query=Street Name+1\n11111 MyCity+My Fitness Studio&quot;&gt;
+        Street Name 1, 11111 MyCity
+    &lt;/div&gt;
+&lt;/section&gt;
+                                            </code></pre>
+                                    </div>
+                                    <p>Street Name 1, 11111 MyCity
+                                        As you can see, the text and the link were both injected into the company
+                                        name elment and the address element. Therefore the user can either click on
+                                        the company name, or on the address and he will allways be redirected to
+                                        google maps.
+                                    </p>
+                            </section>
+                            <section id="page-section" class="doc-section">
+                                <h2 class="section-title">Existing Database Modules</h2>
+                                <p>
+                                    This section gives an overview about all existing database modules and their schema.
+                                </p>
+                                <div id="master-data" class="section-block">
+                                    <h3 class="block-title">Master Data</h3>
+                                    <ul class="list">
+                                        <li>name: "master-data"</li>
+                                        <li>category: -</li>
+                                    </ul>
+                                    <div class="code-block">
+                                        <pre class="language-javascript"><code class="language-javascript">{
+    "name": {
+        "text": {
+            "content": "" // Project, Organization Name e.g. "Fitmotion"
+        },
+        "attributes": [{
+            "name": "href",
+            "content": "", // Google Maps Query Link
+            "type": "LINK"
+        }],
+        "nestedAttributes": []
+    },
+    "owner": {
+        "text": {
+            "content": "" // Company Owner, e.g. "Max Mustermann"
+        },
+        "attributes": [],
+        "nestedAttributes": []
+    },
+    "company-name": {
+        "text": {
+            "content": "" // Company name, e.g. "fitmotion.cloud GmbH"
+        },
+        "attributes": [{
+            "name": "href",
+            "content": "", // Google Maps Query Link
+            "type": "LINK"
+        }],
+        "nestedAttributes": []
+    },
+    "address": {
+        "text": {
+            "content": "" // Address, e.g. "Street 1, 10115 Berlin"
+        },
+        "attributes": [{
+            "name": "href",
+            "content": "", // Google Maps Query Link
+            "type": "LINK"
+        }],
+        "nestedAttributes": []
+    },
+    "opening-hours": {
+        "text": {
+            "content": "" // Opening Hours, e.g. "Mo-Fr: 8:00 Uhr - 21:00 Uhr&quot;br&quot;Sa&So:10:00 Uhr - 18:00 Uhr"
+        },
+        "attributes": [],
+        "nestedAttributes": []
+    },
+    "number": {
+        "text": {
+            "content": "" // Phone Number
+        },
+        "attributes": [{
+            "name": "href",
+            "content": "", // Phone Number Link e.g. "tel:0123456789"
+            "type": "LINK"
+        }],
+        "nestedAttributes": []
+    },
+    "mail": {
+        "text": {
+            "content": "" // Mail
+        },
+        "attributes": [{
+            "name": "href",
+            "content": "", // Mail Link e.g. "mailto:info@my-studio.de"
+            "type": "LINK"
+        }],
+        "nestedAttributes": []
+    },
+    "domain": {
+        "text": {
+            "content": "" // Domain e.g. "my-studio.de"
+        },
+        "attributes": [],
+        "nestedAttributes": []
+    },
+    "currency": {
+        "text": {
+            "content": "" // Currency e.g. "€"
+        },
+        "attributes": [],
+        "nestedAttributes": []
+    },
+    "facebook-page": {
+        "attributes": [{
+            "name": "href",
+            "content": "", // Facebook Page link e.g. "https://facebook.com/my-studio"
+            "type": "LINK"
+        }],
+        "nestedAttributes": []
+    },
+    "instagram-page": {
+        "attributes": [{
+            "name": "href",
+            "content": "", // Instagram Page link e.g. "https://facebook.com/my-studio"
+            "type": "LINK"
+        }],
+        "nestedAttributes": []
+    }
+}                                  
+</code></pre>
+                                    </div>
+                                </div>
+                                <div id="map-data" class="section-block">
+                                    <h3 class="block-title">Map Data</h3>
+                                    <ul class="list">
+                                        <li>name: "map-data"</li>
+                                        <li>category: -</li>
+                                    </ul>
+                                    <div class="code-block">
+                                        <pre class="language-javascript"><code class="language-javascript">{
+    "map-coordinate-lat": {
+        "text": {
+            "content": "" // Map coordinate lattitude e.g. "47.80937725"
+        },
+        "attributes": [],
+        "nestedAttributes": []
+    },
+    "map-coordinate-long": {
+        "text": {
+            "content": "" // Map coordinate longitude e.g. "9.630582501297594"
+        },
+        "attributes": [],
+        "nestedAttributes": []
+    },
+    "map-popup": {
+        "text": {
+            "content": ""// Map Popup Text e.g. "&quot;b&quot;My Studio GmbH&quot;/b&quot;&quot;br&quot;Steet 1, 11015 Berlin"
+        },
+        "attributes": [],
+        "nestedAttributes": []
+    }
+}
+</code></pre>
+                                    </div>
+                                </div>
+                                <div id="legal-page-data" class="section-block">
+                                    <h3 class="block-title">Legal Page Data</h3>
+                                    <p>
+                                        All legal pages have the same schema. You can access them with the names defined
+                                        below.
+                                    </p>
+                                    <ul class="list">
+                                        <li>name:
+                                            <ul>
+                                                <li>"imprint" </li>
+                                                <li>"privacy-policy" </li>
+                                                <li>"terms-and-conditions" </li>
+                                                <li>"mail-agreement" </li>
+                                                <li>"sepa-agreement" </li>
+                                                <li>"cancellation-terms" </li>
+                                                <li>"privacy-policy-agreement"</li>
+                                            </ul>
+                                        </li>
+                                        <li>category: -</li>
+                                    </ul>
+                                    <div class="code-block">
+                                        <pre class="language-javascript"><code class="language-javascript">{
+    "Headline": {
+        "text": {
+            "content": "" // Legal Page Headline
+        }
+    },
+    "Subline": {
+        "text": {
+            "content": "" // Legal Page Subline
+        }
+    },
+    "Text": {
+        "text": {
+            "content": "" // Legal Page Text
+        }
+    },
+    "Headline-imprint": { // You can exhcange imprint with all the names above
+        "text": {
+            "content": "" // Legal Page Headline
+        }
+    },
+    "Subline-imprint": {
+        "text": {
+            "content": "" // Legal Page Subline
+        }
+    },
+    "Text-imprint": {
+        "text": {
+            "content": "" // Legal Page Text
+        }
+    }
+}
+</code></pre>
+                                    </div>
+                                </div>
+                                <div id="membership-data" class="section-block">
+                                    <h3 class="block-title">Membership Data</h3>
+                                    <p>
+                                        A customer often has more than one membership. In order to inject all the
+                                        memberships into the HTML Website, you have to define the
+                                        <code>data-cms-database-module</code> in a component list.
+                                    </p>
+                                    <ul class="list">
+                                        <li>name: "membership-data"</li>
+                                        <li>category: the membership category, e.g. "standard" | "bestseller"</li>
+                                    </ul>
+                                    <div class="code-block">
+                                        <pre class="language-javascript"><code class="language-javascript">{
+    "membership-id": {
+        "attributes": [{
+            "name": "value",
+            "content": "", // The membership id e.g. required for the membership form
+            "type": "TEXT"
+        }, {
+            "name": "data-cms-popup-section-open-name",
+            "content": "", // The membership id e.g. required for the membership form
+            "type": "TEXT"
+        }, {
+            "name": "data-cms-popup-open",
+            "content": "", // The membership id e.g. required for the membership form
+            "type": "TEXT"
+        }]
+    },
+    "membership-name": {
+        "text": {
+            "content": "" // The membership name, e.g. "Premium MedX"
+        }
+    },
+    "membership-type": {
+        "text": {
+            "content": "" // The membership type, e.g. "Standardvertrag"
+        }
+    },
+    "membership-duration": {
+        "text": {
+            "content": "" // The membership duration, e.g. "2 Monate"
+        }
+    },
+    "membership-payment": {
+        "text": {
+            "content": "" // The payment interval, e.g. "Monatlich"
+        }
+    },
+    "membership-price-before-comma": {
+        "text": {
+            "content": "" // The membership price before comma, e.g. "39"
+        }
+    },
+    "membership-price-after-comma": {
+        "text": {
+            "content": "" // The membership price after comma, e.g. "99"
+        }
+    },
+    "membership-price": {
+        "text": {
+            "content": "" // The full membership price, e.g. "39.99"
+        }
+    },
+    "membership-additional-information": {
+        "text": {
+            "content": "" // Additional Informations for the membership, e.g. "Kostenlose Handtücher"
+        }
+    },
+    "membership-services": { // This should be the name of the component list for the membership services
+        "components": [{
+            "component": {
+                "service-name": {
+                    "text": {
+                        "content": "" // Text of the first service, e.g. "Inklusive Free Weight Area"
+                    }
+                }
+            }
+        }, {
+            "component": {
+                "service-name": {
+                    "text": {
+                        "content": "" // Text of the second service, e.g. "Inklusive Kinesis Station Area"
+                    }
+                }
+            }
+        }, {
+            "component": {
+                "service-name": {
+                    "text": {
+                        "content": "" // Text of the third service, e.g. "Vollklimatisierte Trainingsräume"
+                    }
+                }
+            }
+        }]
+    },
+    "membership-additional-services": { // This should be the name of the component list for the membership additional services
+        "components": [{
+            "component": {
+                "additional-service-id": {
+                    "text": {
+                        "content": "" // The id of the additional service, e.g. required for the membership form if selected by the customer
+                    }
+                },
+                "additional-service-name": {
+                    "text": {
+                        "content": "" // The name of the additional service bookable, e.g. "Sauna"
+                    }
+                },
+                "additional-service-price": {
+                    "text": {
+                        "content": "" // The price of the addtional service, e.g. "5.99"
+                    }
+                }
+            }
+        }]
+    },
+    "all-services": { // This is the name of the component list for all services, if both the services and the additional services are required.
+        "components": [{
+            "category": "membership-services", // This is matched with the component category membership-services
+            "component": {
+                "membership-services": { // This should be the name of the component list for the membership services
+                    "components": [{
+                        "component": {
+                            "service-name": {
+                                "text": {
+                                    "content": "" // Text of the first service, e.g. "Inklusive Free Weight Area"
+                                }
+                            }
+                        }
+                    }, {
+                        "component": {
+                            "service-name": {
+                                "text": {
+                                    "content": "" // Text of the second service, e.g. "Inklusive Kinesis Station Area"
+                                }
+                            }
+                        }
+                    }, {
+                        "component": {
+                            "service-name": {
+                                "text": {
+                                    "content": "" // Text of the third service, e.g. "Vollklimatisierte Trainingsräume"
+                                }
+                            }
+                        }
+                    }]
+                }
+            }
+        }, {
+            "category": "membership-additional-services", // This is matched with the component category membership-services
+            "component": {
+                "membership-additional-services": { // This should be the name of the component list for the membership additional services
+                    "components": [{
+                        "component": {
+                            "additional-service-id": {
+                                "text": {
+                                    "content": "" // The id of the additional service, e.g. required for the membership form if selected by the customer
+                                }
+                            },
+                            "additional-service-name": {
+                                "text": {
+                                    "content": "" // The name of the additional service bookable, e.g. "Sauna"
+                                }
+                            },
+                            "additional-service-price": {
+                                "text": {
+                                    "content": "" // The price of the addtional service, e.g. "5.99"
+                                }
+                            }
+                        }
+                    }]
+                }
+            }
+        }]
+    }
+}
+</code></pre>
+                                    </div>
+                                </div>
+                                <div id="course-plan-data" class="section-block">
+                                    <h3 class="block-title">Course Plan Data</h3>
+                                    <p>
+                                        All legal pages have the same schema. You can access them with the names defined
+                                        below.
+                                    </p>
+                                    <ul class="list">
+                                        <li>name:
+                                            <ul>
+                                                <li>"imprint" </li>
+                                                <li>"privacy-policy" </li>
+                                                <li>"terms-and-conditions" </li>
+                                                <li>"mail-agreement" </li>
+                                                <li>"sepa-agreement" </li>
+                                                <li>"cancellation-terms" </li>
+                                                <li>"privacy-policy-agreement"</li>
+                                            </ul>
+                                        </li>
+                                        <li>category: -</li>
+                                    </ul>
+                                    <div class="code-block">
+                                        <pre class="language-javascript"><code class="language-javascript">{
+    "Headline": {
+        "text": {
+            "content": "" // Legal Page Headline
+        }
+    },
+    "Subline": {
+        "text": {
+            "content": "" // Legal Page Subline
+        }
+    },
+    "Text": {
+        "text": {
+            "content": "" // Legal Page Text
+        }
+    },
+    "Headline-imprint": { // You can exhcange imprint with all the names above
+        "text": {
+            "content": "" // Legal Page Headline
+        }
+    },
+    "Subline-imprint": {
+        "text": {
+            "content": "" // Legal Page Subline
+        }
+    },
+    "Text-imprint": {
+        "text": {
+            "content": "" // Legal Page Text
+        }
+    }
+}
+</code></pre>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!--//content-inner-->
+                    </div>
+                    <!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                            </nav>
+                            <!--//doc-menu-->
+                        </div>
+                    </div>
+                    <!--//doc-sidebar-->
+                </div>
+                <!--//doc-body-->
+            </div>
+            <!--//container-->
+        </div>
+        <!--//doc-wrapper-->
+
+    </div>
+    <!--//page-wrapper-->
+
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a
+                    href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+
+        </div>
+        <!--//container-->
+    </footer>
+    <!--//footer-->
+
+    <!-- Main Javascript -->
+    <script type="text/javascript" src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Quick Start - webmotion.cloud tagging documentation</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link
+        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight"></span><span class="text-bold">Tagging Docs</span>
+                        </a>
+                    </h1>
+
+                </div>
+                <!--//branding-->
+
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Quick Start</li>
+                </ol>
+
+                <div class="top-search-box">
+                    <form class="form-inline search-form justify-content-center" action="" method="get">
+
+                        <input type="text" placeholder="Search..." name="search" class="form-control search-input">
+
+                        <button type="submit" class="btn search-btn" value="Search"><i
+                                class="fas fa-search"></i></button>
+
+                    </form>
+                </div>
+
+            </div>
+            <!--//container-->
+        </header>
+        <!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i> Quick Start</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Last updated: Feb 22th, 2021</div>
+                </div>
+                <!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            <section id="introduction-section" class="doc-section">
+                                <h2 class="section-title">Introduction</h2>
+                                <div class="section-block">
+                                    <p>
+                                        Webmotion.cloud is a fully connected marketing plattform, specialized on several
+                                        verticals like Fitness, Beauty, Ink, Art, Car, Med, Craft, Gastro and Immo. It
+                                        builds highly adapted Websites and Landingpages for them and integrates them
+                                        together with other Marketing Tools, like an annual marketing plan, a fully
+                                        customized crm and many more.
+                                        To achieve this, every customer must have the possibility, to exchange the
+                                        content on the websites and landingpages on his own. Therefore we built a fully
+                                        customized content management system, which builds on top of the website schema.
+                                        For the best user experience, the content management system has to be perfectly
+                                        adopted to each website and landingpage and should give the user the possibility
+                                        to exchange exactly what he needs, but not more and not less.
+                                        Therefore we need to tag each website, so the content management system knows,
+                                        which content the user is allowed to change and which not.
+                                    </p>
+                                    <h6>The tag which is used for our webmotion.cloud:</h6>
+                                    <pre><code class="language-markup">&lt;div data-cms-&lt;tag-name&gt;=&quot;&lt;tag-content&gt;&quot;&gt;</code></pre>
+                                    <!-- <a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/prettydocs-free-bootstrap-theme-for-developers-and-startups/" class="btn btn-green" target="_blank"><i class="fas fa-download"></i> Download PrettyDocs</a> -->
+                                </div>
+                            </section>
+                            <!--//doc-section-->
+                            <section id="structure-section" class="doc-section">
+                                <h2 class="section-title">Basic Structure</h2>
+                                <div id="overview" class="section-block">
+                                    <h3 class="block-title">Overview</h3>
+                                    <p class="section-block">
+                                        Our content management system and therefore each website and landingpage is
+                                        structured into Pages, Sections, Components and Elements.
+                                    </p>
+                                    <div>
+                                        <h6>Page Examples:</h6>
+                                        <ul>
+                                            <li>Homepage</li>
+                                            <li>Services Page</li>
+                                            <li>News</li>
+                                            <li>Imprint</li>
+                                        </ul>
+                                        <h6>Section Examples:</h6>
+                                        <ul>
+                                            <li>Header</li>
+                                            <li>Footer</li>
+                                            <li>Image Banner</li>
+                                            <li>Service Overview</li>
+                                            <li>Map</li>
+                                            <li>Contact Form</li>
+                                        </ul>
+                                        <h6>Component Examples inside a section:</h6>
+                                        <ul>
+                                            <li>Service Overview Item with an Image</li>
+                                            <li>Service Overview Item with a Video</li>
+                                            <li>Image in Gallery</li>
+                                            <li>List Item with an icon</li>
+                                            <li>Booking Item</li>
+                                        </ul>
+                                        <h6>Element Examples inside a section or component:</h6>
+                                        <ul>
+                                            <li>Headline</li>
+                                            <li>Subline</li>
+                                            <li>Text</li>
+                                            <li>Image</li>
+                                            <li>Video</li>
+                                            <li>Link</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--//code-block-->
+                                <div id="page-structure" class="section-block">
+                                    <h3 class="block-title">Page Structure:</h3>
+                                    <p>A page is always constructed with several sections</p>
+                                    <div>
+                                        <p>The section name should be tagged with:</p>
+                                        <pre><code class="language-markup">&lt;div data-cms-section=&quot;&lt;section-name&gt;&quot;&gt;</code></pre>
+                                        <div class="callout-block callout-warning">
+                                            <div class="icon-holder">
+                                                <i class="fas fa-bug"></i>
+                                            </div>
+                                            <div class="content">
+                                                <h4 class="callout-title">Section Name</h4>
+                                                <p>
+                                                    This section name must be unique unless it is exactly the same
+                                                    section and only the content differs.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4>Example:</h4>
+                                    <div class="w-100 bg-secondary p-5">
+                                        <div class="w-100 bg-light p-3 mb-3">Header</div>
+                                        <div class="w-100 bg-light p-3 mb-3">Section 1</div>
+                                        <div class="w-100 bg-light p-3 mb-3">Section 2</div>
+                                        <div class="w-100 bg-light p-3 mb-3">Section 3</div>
+                                        <div class="w-100 bg-light p-3 mb-3">...</div>
+                                        <div class="w-100 bg-light p-3">Footer</div>
+                                    </div>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup"> 
+&lt;body&gt; 
+    &lt;section data-cms-section=&quot;Header&quot;&gt;Header&lt;/section&gt;
+    &lt;section data-cms-section=&quot;Section 1&quot;&gt;Section 1&lt;/section&gt;
+    &lt;section data-cms-section=&quot;Section 2&quot;&gt;Section 2&lt;/section&gt;
+    &lt;section data-cms-section=&quot;Section 3&quot;&gt;Section 3&lt;/section&gt;
+    &lt;section &gt;...&lt;/section&gt;
+    &lt;section data-cms-section=&quot;Footer&quot;&gt;Footer&lt;/section&gt;
+&lt;/body&gt;
+                                        </code></pre>
+                                    </div>
+                                </div>
+                                <div id="simple-section-1" class="section-block">
+                                    <h3 class="block-title">Section with content:</h3>
+                                    <div>
+                                        <p>All html content elements should be marked with:</p>
+                                        <pre><code class="language-markup">&lt;div data-cms-element=&quot;&lt;element-name&gt;&quot;&gt;</code></pre>
+                                        <div class="callout-block callout-warning">
+                                            <div class="icon-holder">
+                                                <i class="fas fa-bug"></i>
+                                            </div>
+                                            <div class="content">
+                                                <h4 class="callout-title">Element Name</h4>
+                                                <p>
+                                                    The element must be unique within the scope of the parent. The
+                                                    scope of the parent can either be a section or a component.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p>For some simple text elements, add the following tag:</p>
+                                        <pre><code class="language-markup">&lt;div data-cms-element=&quot;&lt;element-name&gt;&quot; data-cms-text=&quot;true&quot;&gt;</code></pre>
+                                        <p>For more complex elements, where an attribute has to be exchanged, add
+                                            the following tag:</p>
+                                        <pre><code class="language-markup">&lt;div data-cms-element=&quot;&lt;element-name&gt;&quot; data-cms-attributes=&quot;&lt;attribute-name&gt;:&lt;attribute-type&gt;&quot;&gt;</code></pre>
+                                        <p>You can also chain more attributes which should be exchangeable with a
+                                            semicolon:</p>
+                                        <pre><code class="language-markup">&lt;div data-cms-element=&quot;&lt;element-name&gt;&quot; data-cms-attributes=&quot;&lt;attribute-name-1&gt;:&lt;attribute-type&gt;;&lt;attribute-name-2&gt;:&lt;attribute-type&gt;&quot;&gt;</code></pre>
+                                        <div class="callout-block callout-info">
+                                            <div class="icon-holder">
+                                                <i class="fas fa-info-circle"></i>
+                                            </div>
+                                            <div class="content">
+                                                <h4 class="callout-title">Attribute Types</h4>
+                                                <p>
+                                                    The following attribute types does exist:
+                                                </p>
+                                                <ul class="list">
+                                                    <li>IMG</li>
+                                                    <li>VIDEO</li>
+                                                    <li>STYLE_IMG</li>
+                                                    <li>LINK</li>
+                                                    <li>TEXT</li>
+                                                </ul>
+                                            </div>
+                                            <!--//content-->
+                                        </div>
+                                    </div>
+                                    <h4>Example:</h4>
+                                    <div class="w-100 bg-secondary p-5">
+                                        <div class="w-100 bg-light p-3 mb-3">
+                                            <h3 data-cms-element>Section 1</h3>
+                                            <div class="row">
+                                                <div class="col-6">Lorem ipsum dolor sit amet, consectetuer
+                                                    adipiscing elit.</div>
+                                                <div class="col-6 bg-secondary text-center p-5">
+                                                    <img src="..." alt="Image">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup"> 
+&lt;section data-cms-section=&quot;Section 1&quot;&gt;
+    &lt;h3 data-cms-element=&quot;Headline&quot; data-cms-text=&quot;true&quot;&gt;Section 1&lt;/h3&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-6&quot; data-cms-element=&quot;Description&quot; data-cms-text=&quot;true&quot;&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/div&gt;
+        &lt;div class=&quot;col-6&quot;&gt;
+            &lt;img src=&quot;...&quot; alt=&quot;Image&quot; data-cms-element=&quot;Image&quot; data-cms-attributes=&quot;src:IMG&quot;&gt;                              
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+                                        </code></pre>
+                                    </div>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Which content should be exchangeable?</h4>
+                                            <p>
+                                                As you can see in the above example, the <code>alt</code> Tag of the
+                                                image is not tagged in the <code>data-cms-attributes</code> tag. Because
+                                                the alt tag is not a direct content, which the end customer can see, it
+                                                should therefore not be visible in the content management system.
+                                            </p>
+                                        </div>
+                                        <!--//content-->
+                                    </div>
+                                </div>
+                                <div id="simple-section-2" class="section-block">
+                                    <h3 class="block-title">Section with more complex content (e.g.
+                                        Background Images):</h3>
+                                    <div>
+                                        <p>Sometimes we want the user to exchange some more complex nested attributes,
+                                            like a style attribute. This is often the case for background images. To do
+                                            this, first of all, the background-image should be declared directly in the
+                                            style tag and <strong>NOT</strong> in the .css file. Then we can use the
+                                            following tag, to exchange the nested attribute:</p>
+                                        <pre><code class="language-markup">&lt;div data-cms-element=&quot;&lt;element-name&gt;&quot; data-cms-nested-attributes=&quot;style=background:STYLE_IMG;&quot;&gt;</code></pre>
+                                        <div class="callout-block callout-warning">
+                                            <div class="icon-holder">
+                                                <i class="fas fa-bug"></i>
+                                            </div>
+                                            <div class="content">
+                                                <h4 class="callout-title">The different between IMG and STYLE_IMG</h4>
+                                                <p>
+                                                    As you can see, we used the <code>STYLE_IMG</code> attribute type in
+                                                    the example above. This is the case, because for a STYLE_IMG, we
+                                                    can't write the source directly into the attribute (e.g.
+                                                    background). Instead, we have to use the <code>url()</code>
+                                                    identifier.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p>We can also chain multiple nested attributes with a comma
+                                            <strong>AND</strong> multiple attributes, which are nested with a semicolon:
+                                        </p>
+                                        <pre><code class="language-markup">&lt;div data-cms-element=&quot;&lt;element-name&gt;&quot; data-cms-nested-attributes=&quot;style=background:STYLE_IMG,color:TEXT;my-custom-attribute=href:LINK;&quot;&gt;</code></pre>
+                                    </div>
+                                    <h4>Example:</h4>
+                                    <div class="w-100 bg-secondary p-5">
+                                        <div class="w-100 bg-light p-3 mb-3">
+                                            <h3 data-cms-element>Section 1</h3>
+                                            <div class="p-3"
+                                                style="background: url(assets/images/demo/elegant-icon-font.jpg);">
+                                                <div>
+                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                                    commodo ligula
+                                                    eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                    parturient
+                                                    montes, nascetur ridiculus mus. Donec quam felis. Lorem ipsum dolor
+                                                    sit amet, consectetuer adipiscing elit. Aenean commodo ligula
+                                                    eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                    parturient
+                                                    montes, nascetur ridiculus mus. Donec quam felis.
+                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                                    commodo ligula
+                                                    eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                    parturient
+                                                    montes, nascetur ridiculus mus. Donec quam felis. Lorem ipsum dolor
+                                                    sit amet, consectetuer adipiscing elit. Aenean commodo ligula
+                                                    eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                    parturient
+                                                    montes, nascetur ridiculus mus. Donec quam felis.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup"> 
+&lt;section data-cms-section=&quot;Section&quot;&gt;
+    &lt;h3 data-cms-element=&quot;Headline&quot; data-cms-text=&quot;true&quot;&gt;Section 1&lt;/h3&gt;
+    &lt;div class=&quot;p-3&quot; style=&quot;background:url(path-to-background-image.png);&quot; data-cms-element=&quot;Background Image&quot; data-cms-nested-attributes=&quot;style=background:STLYE_IMG&quot;&gt;
+        &lt;div class=&quot;col-6&quot; data-cms-element=&quot;Description&quot; data-cms-text=&quot;true&quot;&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+                                        </code></pre>
+                                    </div>
+                                </div>
+                                <div id="complex-section" class="section-block">
+                                    <h3 class="block-title">Section including components:</h3>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Components</h4>
+                                            <p>
+                                                A Component is defined as content in a section, which is
+                                                <strong>duplicatable</strong> and
+                                                <strong>removable</strong>. Sections can have multiple different
+                                                components, from which
+                                                the user then can select, to add to the section.
+                                            </p>
+                                        </div>
+                                        <!--//content-->
+                                    </div>
+                                    <p>
+                                        We first need to define a component wrapper, in which the components are
+                                        rendered and the category. The category defines, which components are allowed to
+                                        be rendered into this component list.
+                                    </p>
+                                    <pre><code class="language-markup">&lt;div data-cms-component-list=&quot;&lt;component-list-name&gt;&quot; data-cms-component-category=&quot;&lt;component-category&gt;&quot;&gt;&lt;/div&gt;</code></pre>
+                                    <p>
+                                        Then we can tag the components in the component list. Each component, which is
+                                        structured exactly the same, should be called the same. A component, which is
+                                        structured a bit differently, must be called not the same. E.g. we have four
+                                        components in a component list. Two of them just contain some text and two of
+                                        them contain an image. Therefore we have to call both with the text the same
+                                        (e.g. Component Text) and both with the image the same (e.g. Component Image).
+                                        They still have all the same component category, because they are rendered into
+                                        the same component list
+                                    </p>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;div data-cms-component-list=&quot;&lt;component-list-name&gt;&quot; data-cms-component-category=&quot;&lt;component-category&gt;&quot;&gt;
+    &lt;div data-cms-component=&quot;&lt;component-1&gt;&quot; data-cms-component-category=&quot;&lt;component-category&gt;&quot;&gt;&lt;/div&gt;
+    &lt;div data-cms-component=&quot;&lt;component-2&gt;&quot; data-cms-component-category=&quot;&lt;component-category&gt;&quot;&gt;&lt;/div&gt;
+    &lt;div data-cms-component=&quot;&lt;component-1&gt;&quot; data-cms-component-category=&quot;&lt;component-category&gt;&quot;&gt;&lt;/div&gt;
+    &lt;div data-cms-component=&quot;&lt;component-2&gt;&quot; data-cms-component-category=&quot;&lt;component-category&gt;&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                                    </code></pre>
+                                    </div>
+                                    <h4>Example:</h4>
+                                    <div class="w-100 bg-secondary p-5">
+                                        <div class="w-100 bg-light p-3 mb-3">
+                                            <h3>Section 1</h3>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="col-12 p-3 mb-2 bg-secondary text-center">
+                                                        <h5>Component 1</h5>
+                                                        <img src="..." alt="Component with an image">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="col-12 p-3 mb-2 bg-secondary text-center">
+                                                        <h5>Component 2</h5>
+                                                        Component with some text
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="col-12 p-3 mb-2 bg-secondary text-center">
+                                                        <h5>Component 3</h5>
+                                                        Component with some text
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="col-12 p-3 mb-2 bg-secondary text-center">
+                                                        <h5>Component 4</h5>
+                                                        <img src="..." alt="Component with an image">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;section data-cms-section=&quot;Section 1&quot;&gt;
+    &lt;h3 data-cms-element=&quot;Headline&quot; data-cms-text=&quot;true&quot;&gt;Section 1&lt;/h3&gt;
+    &lt;div data-cms-component-list=&quot;Service Overview&quot; data-cms-component-category=&quot;service-component&quot;&gt;
+        &lt;div data-cms-component=&quot;Component Image&quot; data-cms-component-category=&quot;service-component&quot;&gt;
+            &lt;h5 data-cms-element=&quot;Headline&quot; data-cms-text=&quot;true&quot;&gt;Component 1&lt;/h5&gt;
+            &lt;img src=&quot;...&quot; alt=&quot;Component with an image&quot; data-cms-element=&quot;Image&quot; data-cms-attributes=&quot;src:IMG&quot;&gt; 
+        &lt;/div&gt;
+        &lt;div data-cms-component=&quot;Component Text&quot; data-cms-component-category=&quot;service-component&quot;&gt;
+            &lt;h5 data-cms-element=&quot;Headline&quot; data-cms-text=&quot;true&quot;&gt;Component 2&lt;/h5&gt;
+            &lt;div data-cms-element=&quot;Text&quot; data-cms-text=&quot;true&quot;&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-cms-component=&quot;Component Text&quot; data-cms-component-category=&quot;service-component&quot;&gt;
+            &lt;h5 data-cms-element=&quot;Headline&quot; data-cms-text=&quot;true&quot;&gt;Component 3&lt;/h5&gt;
+            &lt;div data-cms-element=&quot;Text&quot; data-cms-text=&quot;true&quot;&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div data-cms-component=&quot;Component Image&quot; data-cms-component-category=&quot;service-component&quot;&gt;
+            &lt;h5 data-cms-element=&quot;Headline&quot; data-cms-text=&quot;true&quot;&gt;Component 4&lt;/h5&gt;
+            &lt;img src=&quot;...&quot; alt=&quot;Component with an image&quot; data-cms-element=&quot;Image&quot; data-cms-attributes=&quot;src:IMG&quot;&gt; 
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+                                        </code></pre>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            <strong>As you can see, we can use the same Element Name (Headline) for each
+                                                component and the section. Because every element is inside another
+                                                scope,
+                                                the element naming is still unique inside the scope.</strong>
+                                        </p>
+                                    </div>
+                                    <div class="callout-block callout-warning">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-bug"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Component Order</h4>
+                                            <p>
+                                                Because the customer can remove, duplicate and add components to a
+                                                component list, the order of the components must not be defined through
+                                                class names like <code>order</code>.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="callout-block callout-danger">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Component Structure</h4>
+                                            <p>
+                                                Components should not depend on each other. This is espacially important
+                                                for the size of a component. In the above example, the size of the text
+                                                component must not depend on the size of the image component. It is
+                                                possible, that the user removes both image components and still want the
+                                                components to look the same.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section id="folder-structure-section" class="doc-section">
+                                <h2 class="section-title">Folder structure & File Naming</h2>
+                                <div id="folder-structure-basic" class="section-block">
+                                    <h3 class="block-title">Basic</h3>
+                                    <p>
+                                        In order to have a uniform folder structure, please use the structure and naming
+                                        mentioned below.
+                                    </p>
+                                    <ul>
+                                        <li>src</li>
+                                        <ul>
+                                            <li>partials
+                                                <ul>
+                                                    <li>head.html</li>
+                                                    <li>sections</li>
+                                                    <li>popup-sections</li>
+                                                    <li>components</li>
+                                                </ul>
+                                            </li>
+                                            <li>custom-js</li>
+                                            <li>custom-style
+                                                <ul>
+                                                    <li>style.css</li>
+                                                </ul>
+                                            </li>
+
+                                            <li>assets
+                                                <ul>
+                                                    <li>library</li>
+                                                    <li>third-party</li>
+                                                    <li>media</li>
+                                                </ul>
+                                            </li>
+                                            <li>index.html</li>
+                                            <li>news.html</li>
+                                            <li>...</li>
+                                        </ul>
+                                    </ul>
+                                </div>
+                                <div id="folder-structure-partials" class="section-block">
+                                    <h3 class="block-title">Partials</h3>
+                                    <p>
+                                        The partials folder should include the html for all existing sections,
+                                        popup-sections and components. In addition to that, it should include the basic
+                                        head content with all imports, metadata and external scripts (e.g. google
+                                        analytics, facebook pixel).
+                                    </p>
+                                    <h4>Example partials/sections:</h4>
+                                    <div class="code-block">
+                                        <h5>header.html</h5>
+                                        <pre><code class="language-markup">
+&lt;section data-cms-section=&quot;Header&quot;&gt; 
+    ...
+&lt;/section&gt;</code></pre>
+                                    </div>
+                                    <div class="code-block">
+                                        <h5>footer.html</h5>
+                                        <pre><code class="language-markup">
+&lt;section data-cms-section=&quot;Footer&quot;&gt; 
+    ...
+&lt;/section&gt;</code></pre>
+                                    </div>
+                                    <div class="code-block">
+                                        <h5>services.html</h5>
+                                        <pre><code class="language-markup">
+&lt;section data-cms-section=&quot;Services&quot;&gt; 
+    ...
+&lt;/section&gt;</code></pre>
+                                    </div>
+                                    <h4>Example partials/popup-sections:</h4>
+                                    <div class="code-block">
+                                        <h5>popup.html</h5>
+                                        <pre><code class="language-markup">
+&lt;section data-cms-popup-section=&quot;Popup&quot;&gt; 
+    ...
+&lt;/section&gt;</code></pre>
+                                    </div>
+                                    <h4>Example partials/components:</h4>
+                                    <div class="code-block">
+                                        <h5>service.html</h5>
+                                        <pre><code class="language-markup">
+&lt;div data-cms-component=&quot;Service&quot;&gt; 
+    ...
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                    <h4>Example partials/head.html:</h4>
+                                    <p>
+                                        The head.html should include all metatags, title, scripts and imports. The
+                                        metatags and the title will be exchanged in the cloud, so it is ok to have a
+                                        similar head for all pages.
+                                    </p>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;Page Title&lt;/title&gt;
+...
+</code></pre>
+                                    </div>
+                                </div>
+                                <div id="folder-structure-custom-js" class="section-block">
+                                    <h3 class="block-title">Custom Javascript</h3>
+                                    <p>
+                                        Custom Javascript should be placed into the "custom-js" folder. Custom
+                                        Javascript
+                                        Files should have a self explaing naming, e.g. use the name
+                                        "custom-form-validation.js" for a custom form validation script.
+                                    </p>
+                                </div>
+                                <div id="folder-structure-custom-style" class="section-block">
+                                    <h3 class="block-title">Custom Style</h3>
+                                    <p>
+                                        Custom stlye should be placed into the "custom-style" folder. Inside the folder
+                                        there <strong>must be</strong> a file named "style.css", which includes all
+                                        color vars.
+                                    </p>
+                                    <p>
+                                        Other styles can be placed into seperate ".css" files, or also inside the
+                                        "style.css" file.
+                                    </p>
+                                    <div class="code-block">
+                                        <h6>Color Vars in the "style.css" file:</h6>
+                                        <pre><code class="language-css">
+:root {
+    --color-1: #000000 !important;
+    --color-2: #101010 !important;
+    --color-3: #010101 !important;
+    --color-4: #111111 !Important;
+    ...
+}</code></pre>
+                                    </div>
+                                </div>
+                                <div id="folder-structure-assets" class="section-block">
+                                    <h3 class="block-title">Assets (<a href="library.html">JS-Library</a>, <a
+                                            href="third-party.html">Third-Party</a>, <a href="media.html">Media</a>)
+                                    </h3>
+                                    <p>
+                                        The asset folder should contain the already existing <a
+                                            href="library.html">JS-Library</a>, <a href="third-party.html">Third-Party
+                                            Packages</a> and <a href="media.html">Media (dummy-images)</a>.
+                                    </p>
+                                </div>
+                            </section>
+                            <section id="script-import-section" class="doc-section">
+                                <h2 class="section-title">Script Imports</h2>
+                                <div class="section-block">
+                                    <p>
+                                        Because we can't know how the customer builds his website, all scripts
+                                        <strong>must be</strong> imported inside each page.
+                                    </p>
+                                    <p>
+                                        In order to don't forget a script import, always build the <a class="scrollto"
+                                            href="#folder-structure-partials">partials/head.html</a> first and include
+                                        this as last step into the actual pages.
+                                    </p>
+                                </div>
+                            </section>
+                            <section id="global-vars-section" class="doc-section">
+                                <h2 class="section-title">Global Variables (Google Analytics, Facebook Pixel, ...)</h2>
+                                <div class="section-block">
+                                    <p>
+                                        it is possible to define global variables inside the html layout. This is
+                                        espacially required for google analytics, facebook pixel and other external
+                                        scripts.
+                                    </p>
+                                    <p>
+                                        In order to make these scripts working, the customers id has to be injected at
+                                        the correct position.
+                                    </p>
+                                    <h4>The following variables exists (It is also possible to define custom variables
+                                        if necessary):</h4>
+                                    <ul class="list">
+                                        <li>--data-cms-var-facebook-pixel--</li>
+                                        <li>--data-cms-var-google-analytics--</li>
+                                        <li>--data-cms-var-usercentrics--</li>
+                                    </ul>
+                                    <h4>Tag:</h4>
+                                    <p>
+                                        <code>--data-cms-var-&lt;var-name&gt;--</code>
+                                    </p>
+                                    <h4>Usage Example:</h4>
+                                    <div class="code-block">
+                                        <pre><code class="language-markup">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+&lt;script type=&quot;text/plain&quot; data-usercentrics=&quot;Google Analytics&quot; async src=&quot;https://www.googletagmanager.com/gtag/js?id=--data-cms-var-google-analytics--&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/plain&quot; data-usercentrics=&quot;Google Analytics&quot;&gt;
+    window.dataLayer = window.dataLayer || [];
+function gtag() {
+    dataLayer.push(arguments);
+}
+gtag('js', new Date());
+gtag('config', '--data-cms-var-google-analytics--', {
+    'anonymize_ip': true
+});
+&lt;/script&gt;</code></pre>
+                                    </div>
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="callout-title">Global Vars Usage:</h4>
+                                            <p>
+                                                As you can see in the above example, we used the global var one time in
+                                                the "src" attribute of the script and one time in the script itself.
+                                            </p>
+                                            <p>
+                                                Global vars will replace the var exactly with the customers id, no
+                                                matter where the global var is used.
+                                            </p>
+                                        </div>
+                                        <!--//content-->
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!--//content-inner-->
+                    </div>
+                    <!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                <a class="nav-link scrollto" href="#introduction-section">Introduction</a>
+                                <a class="nav-link scrollto" href="#structure-section">Basic Structure</a>
+                                <nav class="doc-sub-menu nav flex-column">
+                                    <a class="nav-link scrollto" href="#overview">Overview</a>
+                                    <a class="nav-link scrollto" href="#page-structure">Page Structure</a>
+                                    <a class="nav-link scrollto" href="#simple-section-1">Section with content</a>
+                                    <a class="nav-link scrollto" href="#simple-section-2">Section with more complex
+                                        content</a>
+                                    <a class="nav-link scrollto" href="#complex-section">Section with multiple
+                                        Components</a>
+                                </nav>
+                                <a class="nav-link scrollto" href="#folder-structure-section">Folder Structure & File Naming</a>
+                                <nav class="doc-sub-menu nav flex-column">
+                                    <a class="nav-link scrollto" href="#folder-structure-basic">Basic</a>
+                                    <a class="nav-link scrollto" href="#folder-structure-partials">Partials</a>
+                                    <a class="nav-link scrollto" href="#folder-structure-custom-js">Custom Javascript</a>
+                                    <a class="nav-link scrollto" href="#folder-structure-custom-style">Custom Style</a>
+                                    <a class="nav-link scrollto" href="#folder-structure-assets">Assets</a>
+                                </nav>
+                                <a class="nav-link scrollto" href="#script-import-section">Script Imports</a>
+                                <a class="nav-link scrollto" href="#global-vars-section">Global Variables (Google Analytics, Facebook Pixel)</a>
+                                <!--//nav-->
+                            </nav>
+                            <!--//doc-menu-->
+
+                        </div>
+                    </div>
+                    <!--//doc-sidebar-->
+                </div>
+                <!--//doc-body-->
+            </div>
+            <!--//container-->
+        </div>
+        <!--//doc-wrapper-->
+
+        <div id="promo-block" class="promo-block">
+            <div class="container">
+                <div class="promo-block-inner">
+                    <h3 class="promo-title text-center"><i class="fas fa-heart"></i> <a
+                            href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/"
+                            target="_blank">Are you an ambitious and entrepreneurial developer?</a></h3>
+                    <div class="row">
+                        <div class="figure-holder col-lg-5 col-md-6 col-12">
+                            <div class="figure-holder-inner">
+                                <a href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/"
+                                    target="_blank"><img class="img-fluid" src="assets/images/demo/instance-promo.jpg"
+                                        alt="Instance Theme" /></a>
+                                <a class="mask"
+                                    href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/"><i
+                                        class="icon fa fa-heart pink"></i></a>
+
+                            </div>
+                        </div>
+                        <!--//figure-holder-->
+                        <div class="content-holder col-lg-7 col-md-6 col-12">
+                            <div class="content-holder-inner">
+                                <div class="desc">
+                                    <h4 class="content-title"><strong> Instance - Bootstrap 4 Portfolio Theme for
+                                            Aspiring Developers</strong></h4>
+                                    <p>Check out <a
+                                            href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/"
+                                            target="_blank">Instance</a> - a Bootstrap personal portfolio theme I
+                                        created for developers. The UX design is focused on selling a developer’s skills
+                                        and experience to potential employers or clients, and has <strong
+                                            class="highlight">all the winning ingredients to get you hired</strong>.
+                                        It’s not only a HTML site template but also a marketing framework for you to
+                                        <strong class="highlight">build an impressive online presence with a high
+                                            conversion rate</strong>. </p>
+                                    <p><strong class="highlight">[Tip for developers]:</strong> If your project is Open
+                                        Source, you can use this area to promote your other projects or hold third party
+                                        adverts like Bootstrap and FontAwesome do!</p>
+                                    <a class="btn btn-cta"
+                                        href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/"
+                                        target="_blank"><i class="fas fa-external-link-alt"></i> View Demo</a>
+
+                                </div>
+                                <!--//desc-->
+
+
+                                <div class="author"><a href="https://themes.3rdwavemedia.com">Xiaoying Riley</a></div>
+                            </div>
+                            <!--//content-holder-inner-->
+                        </div>
+                        <!--//content-holder-->
+                    </div>
+                    <!--//row-->
+                </div>
+                <!--//promo-block-inner-->
+            </div>
+            <!--//container-->
+        </div>
+        <!--//promo-block-->
+
+    </div>
+    <!--//page-wrapper-->
+
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a
+                    href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+
+        </div>
+        <!--//container-->
+    </footer>
+    <!--//footer-->
+
+
+    <!-- Main Javascript -->
+    <script type="text/javascript" src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
