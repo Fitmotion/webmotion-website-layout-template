@@ -4,8 +4,9 @@
     "main": "index.js",
     "repository": "git@github.com:Fitmotion/webmotion-website-layout-template.git",
     "scripts": {
-        "build": "gulp nunjucks",
-        "start": "gulp webserver"
+        "build": "gulp nunjucks copy",
+        "copy": "gulp copy",
+        "start": "gulp webserver docs"
     },
     "devDependencies": {
         "gulp": "^4.0.2",

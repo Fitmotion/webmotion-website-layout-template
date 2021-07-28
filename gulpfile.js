@@ -13,17 +13,25 @@ gulp.task('nunjucks', function () {
         .pipe(gulp.dest('dist'))
 });
 
-gulp.task('localWebsiteServer', function () {
-
+gulp.task('copy', function () {
+    return gulp.src(['src/pages/**/*.*', '!src/pages/**/*.+(html|nunjucks|njk)'])
+        .pipe(gulp.dest('dist'))
 });
-
-
 
 gulp.task('webserver', function () {
     gulp.src('dist')
         .pipe(webserver({
+            port: 9001,
             livereload: true,
-            directoryListing: true,
+            open: true
+        }));
+});
+
+gulp.task('docs', function () {
+    gulp.src('docs')
+        .pipe(webserver({
+            port: 9002,
+            livereload: true,
             open: true
         }));
 });
