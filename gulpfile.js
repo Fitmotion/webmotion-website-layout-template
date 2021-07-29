@@ -25,33 +25,30 @@ gulp.task('spellcheck', function () {
 
 gulp.task('nunjucks', function () {
     // Gets .html and .nunjucks files in pages
-    return gulp.src('src/pages/**/*.+(html|nunjucks|njk)')
+    return gulp.src('src/*.+(html|nunjucks|njk)')
         // Renders template with nunjucks
         .pipe(nunjucksRender({
-            path: ['src/layouts']
+            path: ['src/layouts', 'src/partials', 'lib/html-snippets']
         }))
         // output files in app folder
         .pipe(gulp.dest('dist'))
 });
 
 gulp.task('copy', function () {
-    return gulp.src(['src/pages/**/*.*', '!src/pages/**/*.+(html|nunjucks|njk)'])
+    gulp.src(['src/pages/**/*.*', '!src/pages/**/*.+(html|nunjucks|njk)'])
         .pipe(gulp.dest('dist'))
+    gulp.src(['docs'])
+        .pipe(gulp.dest('dist/docs'))
+    gulp.src(['src/custom-js'])
+        .pipe(gulp.dest('dist/custom-js'))
+    gulp.src(['src/custom-style'])
+        .pipe(gulp.dest('dist/custom-js'))        
 });
 
 gulp.task('webserver', function () {
     gulp.src('dist')
         .pipe(webserver({
             port: 9001,
-            livereload: true,
-            open: true
-        }));
-});
-
-gulp.task('docs', function () {
-    gulp.src('docs')
-        .pipe(webserver({
-            port: 9002,
             livereload: true,
             open: true
         }));
