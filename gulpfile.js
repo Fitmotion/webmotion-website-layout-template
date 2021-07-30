@@ -28,32 +28,35 @@ gulp.task('nunjucks', function () {
     return gulp.src('src/*.+(html|nunjucks|njk)')
         // Renders template with nunjucks
         .pipe(nunjucksRender({
-            path: ['src/layouts', 'src/partials', 'lib/html-snippets']
+            path: ['src/layouts', 'src/templates', 'lib/html-snippets']
         }))
         // output files in app folder
         .pipe(gulp.dest('dist'))
 });
 
 gulp.task('copy', function () {
-    gulp.src(['src/pages/**/*.*', '!src/pages/**/*.+(html|nunjucks|njk)'])
+    gulp.src(['src/**/*.*', '!src/**/*.+(html|nunjucks|njk)'])
         .pipe(gulp.dest('dist'))
-    gulp.src(['docs'])
+    gulp.src(['docs/**/*'])
         .pipe(gulp.dest('dist/docs'))
-    gulp.src(['src/custom-js'])
+    gulp.src(['src/custom-js/**/*'])
         .pipe(gulp.dest('dist/custom-js'))
-    gulp.src(['src/custom-style'])
-        .pipe(gulp.dest('dist/custom-js'))        
+    gulp.src(['assets/**/*'])
+        .pipe(gulp.dest('dist/assets'))
+    return gulp.src(['src/custom-style/**/*'])
+        .pipe(gulp.dest('dist/custom-style'))
 });
 
 gulp.task('webserver', function () {
     gulp.src('dist')
         .pipe(webserver({
-            port: 9001,
+            port: 8000,
             livereload: true,
-            open: true
+            directoryListing: true,
+            open: 'http://localhost:8000/index.html'
         }));
 });
 
-// gulp.task('watch', function () {
-//     gulp.watch('src/*.*', gulp.series('nunjucks', 'copy'));
-// });
+gulp.task('watch', function() {
+    gulp.watch('src/**/*', gulp.series('nunjucks', 'copy'));
+});

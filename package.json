@@ -6,7 +6,7 @@
     "scripts": {
         "build": "gulp nunjucks copy",
         "copy": "gulp copy",
-        "start": "gulp webserver docs watch",
+        "start": "gulp webserver nunjucks copy watch",
         "watch": "gulp watch",
         "spellcheck": "gulp spellcheck"
     },
