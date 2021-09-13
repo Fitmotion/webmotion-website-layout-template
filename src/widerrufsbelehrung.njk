@@ -1,0 +1,11 @@
+{% set cmsPage = "Widerrufsbelehrung" %}
+{% set cmsPageType = "OTHERS" %}
+{% extends "initial.njk" %}
+
+{% block content %}
+    {% include "partials/sections/cancellationTerms.njk" %}
+{% endblock %}
+
+{% block body %}
+    {{ super() }}
+{% endblock %}

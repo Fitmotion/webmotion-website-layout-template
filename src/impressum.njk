@@ -1,0 +1,11 @@
+{% set cmsPage = "Impressum" %}
+{% set cmsPageType = "IMPRINT" %}
+{% extends "initial.njk" %}
+
+{% block content %}
+    {% include "partials/sections/imprint.njk" %}
+{% endblock %}
+
+{% block body %}
+    {{ super() }}
+{% endblock %}

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
 
-    <head>
+    <head {% if cmsPage %} data-cms-page="{{ cmsPage }}"{% endif %} {% if cmsPageType %} data-cms-page-type="{{ cmsPageType }}"{% endif %}>
         {% include "partials/head.njk" %}
     </head>
     <body>
         {% block body %}
             {% include "partials/sections/header.njk" %}
-            {% include "partials/sections/banner.njk" %}
             {% block content %}{% endblock %}
             {% include "partials/sections/footer.njk" %}
         {% endblock %}

@@ -1,0 +1,11 @@
+{% set cmsPage = "AGBs" %}
+{% set cmsPageType = "TERMS_CONDITIONS" %}
+{% extends "initial.njk" %}
+
+{% block content %}
+    {% include "partials/sections/termsAndConditions.njk" %}
+{% endblock %}
+
+{% block body %}
+    {{ super() }}
+{% endblock %}

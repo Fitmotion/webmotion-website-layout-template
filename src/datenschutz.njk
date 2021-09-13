@@ -1,0 +1,11 @@
+{% set cmsPage = "Datenschutz" %}
+{% set cmsPageType = "PRIVACY_POLICY" %}
+{% extends "initial.njk" %}
+
+{% block content %}
+    {% include "partials/sections/privacyPolicy.njk" %}
+{% endblock %}
+
+{% block body %}
+    {{ super() }}
+{% endblock %}
