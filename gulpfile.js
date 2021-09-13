@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const nunjucksRender = require('gulp-nunjucks-render');
-const webserver = require('gulp-webserver');
+const liveServer = require('live-server');
 const through2 = require('through2');
 
 function checkForSpellingMistakes(text) {
@@ -37,8 +37,6 @@ gulp.task('nunjucks', function () {
 gulp.task('copy', function () {
     gulp.src(['src/**/*.*', '!src/**/*.+(html|nunjucks|njk)'])
         .pipe(gulp.dest('dist'))
-    gulp.src(['docs/**/*'])
-        .pipe(gulp.dest('dist/docs'))
     gulp.src(['src/custom-js/**/*'])
         .pipe(gulp.dest('dist/custom-js'))
     gulp.src(['assets/**/*'])
@@ -47,14 +45,12 @@ gulp.task('copy', function () {
         .pipe(gulp.dest('dist/custom-style'))
 });
 
-gulp.task('webserver', function () {
-    gulp.src('dist')
-        .pipe(webserver({
-            port: 8000,
-            livereload: true,
-            directoryListing: true,
-            open: 'http://localhost:8000/index.html'
-        }));
+gulp.task('liveserver', function () {
+    liveServer.start({
+        root: "dist",
+        file: "index.html",
+        logLevel: 0,
+    });
 });
 
 gulp.task('watch', function() {
